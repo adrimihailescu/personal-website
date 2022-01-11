@@ -5,6 +5,7 @@ const AboutMe = () => {
   return (
     <AboutWrapper>
       <h1>About Me</h1>
+      <h3>A bit about who i am</h3>
       <ContentWrapper>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta optio
