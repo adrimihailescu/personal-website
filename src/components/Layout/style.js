@@ -11,4 +11,5 @@ export const LayoutWrapper = styled.div`
   padding: 0;
   min-height: 100vh;
   width: 100%;
+  font-size: 20px;
 `

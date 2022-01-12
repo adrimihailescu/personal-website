@@ -1,26 +1,47 @@
 import React from "react"
-import { ContactWrapper, FormWrapper } from "./style"
+import {
+  ContactWrapper,
+  FormWrapper,
+  Button,
+  Input,
+  Textarea,
+  Label,
+  Title,
+} from "./style"
 
 const Contact = () => {
   return (
     <ContactWrapper>
-      <h1>Contact</h1>
+      <Title>Contact</Title>
       <h3>Want To Get In Touch?</h3>
       <FormWrapper>
         <form>
           <div>
-            <label>
+            <Label>
+              <span>Your name</span>
+              <Input type="name" required name="name" placeholder="Your name" />
+            </Label>
+            <Label>
               <span>Your email</span>
-              <input type="email" required name="email" />
-            </label>
+              <Input
+                type="email"
+                required
+                name="email"
+                placeholder="Your email"
+              />
+            </Label>
           </div>
           <div>
-            <label>
-              <span>Your message</span>
-              <textarea required name="message" />
-            </label>
+            <Label>
+              <span>Message</span>
+              <Textarea
+                placeholder="Type in your message"
+                required
+                name="message"
+              />
+            </Label>
           </div>
-          <button type="submit">Send</button>
+          <Button type="submit">Send</Button>
         </form>
       </FormWrapper>
     </ContactWrapper>

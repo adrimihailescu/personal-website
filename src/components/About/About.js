@@ -1,10 +1,10 @@
 import React from "react"
-import { AboutWrapper, ContentWrapper } from "./style"
+import { AboutWrapper, ContentWrapper, Title } from "./style"
 
 const AboutMe = () => {
   return (
     <AboutWrapper>
-      <h1>About Me</h1>
+      <Title>About Me</Title>
       <h3>A bit about who i am</h3>
       <ContentWrapper>
         <p>

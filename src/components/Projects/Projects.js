@@ -1,10 +1,10 @@
 import React from "react"
-import { ProjectsWrapper, ContentProWrapper } from "./style"
+import { ProjectsWrapper, ContentProWrapper, Title } from "./style"
 
 const Projects = () => {
   return (
     <ProjectsWrapper>
-      <h1>Projects</h1>
+      <Title>Projects</Title>
       <h3>Here are some of my projects</h3>
       <ContentProWrapper>
         <p>
