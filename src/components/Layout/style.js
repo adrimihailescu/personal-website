@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const LayoutWrapper = styled.div`
   display: flex;
   flex: 3;
+  flex-direction: column;
   flex-direction: row;
   align-items: stretch;
   justify-content: center;

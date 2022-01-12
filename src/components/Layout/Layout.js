@@ -17,6 +17,7 @@ body{
 h1{
   font-size: 2em;
 }
+
 `
 
 const Layout = ({ children }) => {

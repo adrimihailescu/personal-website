@@ -2,11 +2,13 @@ import styled from "styled-components"
 
 export const ContactWrapper = styled.div`
   color: purple;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   cursor: pointer;
   min-height: 100vh;
   background-color: #f9ea8f;
   background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
-  width: 100%;
   max-width: 33.33%;
   align-itens: center;
   justify-content: center;
@@ -63,7 +65,7 @@ export const Textarea = styled.textarea`
   background: papayawhip;
   border: none;
   border-radius: 3px;
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
   width: 100%;
   height: 7rem;
