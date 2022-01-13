@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ContactWrapper = styled.div`
-  color: purple;
+  color: var(--primary-500);
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -25,17 +25,18 @@ export const FormWrapper = styled.div`
   flex-direction: row;
   text-transform: capitalize;
   justify-content: center;
+  color: var(--grey-1000);
 `
 export const Title = styled.h1`
   font-size: 50px;
-  color: blue;
+  color: var(--primary-500);
 `
 
 export const Button = styled.button`
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border-radius: 3px;
+  border-radius: var(--borderRadius);
   color: mediumseagreen;
   background: papayawhip;
   border: 2px solid papayawhip;
@@ -57,14 +58,14 @@ export const Input = styled.input`
   color: palevioletred;
   background: papayawhip;
   border: none;
-  border-radius: 3px;
+  border-radius: var(--borderRadius);
   width: 100%;
 `
 export const Textarea = styled.textarea`
   color: palevioletred;
   background: papayawhip;
   border: none;
-  border-radius: 3px;
+  border-radius: var(--borderRadius);
   padding: 10px;
   margin: 10px;
   width: 100%;

@@ -1,0 +1,16 @@
+{
+  "tools": [
+    "javascript",
+    "React",
+    "Gatsby",
+    "Styled components",
+    "Material UI",
+    "Redux",
+    "Contentful"
+  ],
+  "description": [
+    "This was one of the projects I had to make for freeCodeCamp",
+    "It was built using React/Gatsby",
+    "I will have to change by hand the description for each Project"
+  ]
+}

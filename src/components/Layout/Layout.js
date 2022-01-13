@@ -17,7 +17,14 @@ body{
 h1{
   font-size: 2em;
 }
-
+  :root{
+    --grey-1000: #333538;
+    --primary-500: #645cff;
+    --headingFont: "Inconsolata", monospace;
+    --bodyFont: "Montserrat", sans-serif;
+    --borderRadius: 5px;
+    --textColor: var(--grey-1000);
+}
 `
 
 const Layout = ({ children }) => {

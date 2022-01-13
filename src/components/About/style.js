@@ -4,7 +4,7 @@ export const AboutWrapper = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  color: red;
+  color: var(--primary-500);
   flex: 1;
   justify-content: center;
   min-height: 100vh;
@@ -15,14 +15,15 @@ export const AboutWrapper = styled.div`
 `
 export const ContentWrapper = styled.p`
   background-color: grey;
-  color: black;
+  color: var(--grey-1000);
   font-size: 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   padding: 10px;
   margin: 10px;
 `
 export const Title = styled.h1`
   font-size: 50px;
-  color: blue;
+  color: var(--primary-500);
+  font-style: var(--headingFont);
 `

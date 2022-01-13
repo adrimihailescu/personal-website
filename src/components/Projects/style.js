@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const ProjectsWrapper = styled.div`
   cursor: pointer;
-  color: green;
+  color: var(--grey-1000);
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const ProjectsWrapper = styled.div`
 
 export const Title = styled.h1`
   font-size: 50px;
-  color: blue;
+  color: var(--primary-500);
 `
 
 export const ContentProWrapper = styled.div`
@@ -25,7 +25,7 @@ export const ContentProWrapper = styled.div`
   background-color: lightblue;
   font-size: 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
   padding: 10px;
   margin: 10px;
 `
