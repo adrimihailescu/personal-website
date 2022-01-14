@@ -7,8 +7,8 @@ export const ContactWrapper = styled.div`
   flex-direction: column;
   cursor: pointer;
   min-height: 100vh;
-  background-color: #f9ea8f;
-  background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   max-width: 33.33%;
   align-itens: center;
   justify-content: center;
@@ -18,7 +18,7 @@ export const FormWrapper = styled.div`
   padding: 10px;
   margin: 10px;
   align-items: center;
-  background-color: grey;
+  background-color: var(--grey-1);
   font-style: italic;
   font-size: 20px;
   display: flex;

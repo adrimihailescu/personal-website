@@ -1,6 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { ProWrapper } from "./style"
 
 const ProjectsList = ({ projects = [] }) => {
   return (
@@ -9,18 +10,21 @@ const ProjectsList = ({ projects = [] }) => {
         const { id, title, image, tools, description } = project
         const pathToImage = getImage(image)
         return (
-          <a
-            href="https://github.com/adrimihailescu?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            key={id}
-          >
-            <GatsbyImage image={pathToImage} alt={title} />
-            <h5>{title}</h5>
-            <p>
-              Tools: {tools} | Description: {description}
-            </p>
-          </a>
+          <ProWrapper>
+            <a
+              href="https://github.com/adrimihailescu?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+              key={id}
+            >
+              <h5>{title}</h5>
+              <GatsbyImage image={pathToImage} alt={title} />
+
+              <p>
+                Tools: {tools} | Description: {description}
+              </p>
+            </a>
+          </ProWrapper>
         )
       })}
     </div>
