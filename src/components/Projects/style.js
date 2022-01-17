@@ -1,8 +1,9 @@
 import styled from "styled-components"
 
+//wrapper for ProjectsList component
 export const ProjectsWrapper = styled.div`
   cursor: pointer;
-  color: var(--primary-500);
+  color: var(--primary-100);
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -15,15 +16,16 @@ export const ProjectsWrapper = styled.div`
   max-width: 33.33%;
 `
 
+// wrapper for the title
 export const Title = styled.h1`
-  font-size: 50px;
-  color: var(--primary-500);
+  color: var(--primary-99);
   font-style: var(--headingFont);
 `
 
+//wrapper/container for the projects
 export const ContentProWrapper = styled.div`
   align-items: center;
-  color: var(--primary-300);
+  color: var(--primary-100);
   font-size: 20px;
   text-align: center;
   border-radius: var(--borderRadius);

@@ -15,18 +15,20 @@ body{
   font-size: 20px;
 }
 h1{
-  font-size: 2em;
+  font-size: 3em;
 }
   :root{
     --grey-1: #474747;
     --grey-1000: #333538;
+    --primary-99: #ADA7FF;
     --primary-100: #c1beff;
     --primary-500: #645cff;
     --primary-300: #938dff;
+    --primary-800: #37338c;
     --headingFont: "Inconsolata", monospace;
     --bodyFont: "Montserrat", sans-serif;
     --borderRadius: 5px;
-    --textColor: var(--primary-300);
+    --textColor: var(--primary-100);
 }
 `
 

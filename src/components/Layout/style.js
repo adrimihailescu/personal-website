@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+//wrapper for the entire Layout
 export const LayoutWrapper = styled.div`
   display: flex;
   flex: 3;
