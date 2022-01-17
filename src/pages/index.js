@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout/Layout"
+import Intro from "../components/Intro/Intro"
 
 // This page will render :
 //An image as the background - React Particles in black and white;
@@ -8,5 +8,5 @@ import Layout from "../components/Layout/Layout"
 // A footer with my git link
 
 export default function Home() {
-  return <Layout>{/* <h1>My personal website</h1> */}</Layout>
+  return <Intro></Intro>
 }

@@ -16,7 +16,10 @@ const Footer = () => {
               Adriana Mihailescu
             </a>
           </span>
-          .Built with <a href="https://www.gatsbyjs.com/">Gatsby</a>
+          .Built with{" "}
+          <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">
+            Gatsby
+          </a>
         </p>
       </footer>
     </FooterWrapper>

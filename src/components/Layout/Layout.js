@@ -37,13 +37,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <LayoutWrapper>
-        {children}
-        <AboutMe />
-        <Projects />
-        <Contact />
-        {/* <Footer /> */}
-      </LayoutWrapper>
+      <LayoutWrapper>{children}</LayoutWrapper>
     </>
   )
 }
