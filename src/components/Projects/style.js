@@ -12,7 +12,6 @@ export const ProjectsWrapper = styled.div`
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   min-height: 100vh;
-
   max-width: 33.33%;
 `
 
