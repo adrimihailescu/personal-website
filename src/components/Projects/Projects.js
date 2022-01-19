@@ -5,16 +5,26 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`
   {
-    allContentfulProjects(sort: { fields: title, order: ASC }) {
-      nodes {
-        id
-        title
-        content {
-          tools
-          description
-        }
-        image {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
+    allContentfulProjectsPage {
+      edges {
+        node {
+          subtitle
+          title
+          projects {
+            id
+            image {
+              gatsbyImageData(
+                layout: CONSTRAINED
+                placeholder: DOMINANT_COLOR
+                jpegProgressive: true
+              )
+            }
+            title
+            content {
+              description
+              tools
+            }
+          }
         }
       }
     }
@@ -23,14 +33,15 @@ const query = graphql`
 
 const Projects = () => {
   const data = useStaticQuery(query)
-  const projects = data.allContentfulProjects.nodes
+  console.log(data)
+  const projects = data.allContentfulProjectsPage.edges[0].node
 
   return (
     <ProjectsWrapper>
-      <Title>Projects</Title>
-      <h3>Here are some of my projects</h3>
+      <Title>{projects.title}</Title>
+      <h3>{projects.subtitle}</h3>
       <ContentProWrapper>
-        <ProjectsList projects={projects} />
+        <ProjectsList projects={projects.projects} />
       </ContentProWrapper>
     </ProjectsWrapper>
   )
