@@ -37,7 +37,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <LayoutWrapper>{children}</LayoutWrapper>
+      <LayoutWrapper>
+        <AboutMe />
+        <Projects />
+        <Contact />
+        {children}
+      </LayoutWrapper>
     </>
   )
 }

@@ -7,8 +7,14 @@ const ProjectsList = ({ projects = [] }) => {
   return (
     <div>
       {projects.map(project => {
-        const { id, title, image, tools, description } = project
+        const {
+          id,
+          title,
+          image,
+          content: { tools, description },
+        } = project
         const pathToImage = getImage(image)
+
         return (
           <ProWrapper>
             <a
@@ -18,12 +24,11 @@ const ProjectsList = ({ projects = [] }) => {
               key={id}
             >
               <h5>{title}</h5>
-              <GatsbyImage image={pathToImage} alt={title} />
-
-              <p>
-                Tools: {tools} | Description: {description}
-              </p>
             </a>
+            <GatsbyImage image={pathToImage} alt={title} />
+
+            <p>Tools: {tools} </p>
+            <p> Description: {description}</p>
           </ProWrapper>
         )
       })}

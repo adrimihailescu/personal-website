@@ -16,7 +16,7 @@ export const AboutWrapper = styled.div`
 `
 
 //wrapper/container for the content
-export const ContentWrapper = styled.p`
+export const ContentWrapper = styled.div`
   color: var(--primary-100);
   font-size: 20px;
   text-align: center;
