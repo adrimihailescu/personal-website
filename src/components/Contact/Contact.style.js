@@ -6,7 +6,7 @@ export const ContactWrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  cursor: pointer;
+
   min-height: 100vh;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
@@ -71,7 +71,6 @@ export const Input = styled.input`
 
 //Textarea
 export const Textarea = styled.textarea`
-  color: palevioletred;
   background: lightpurple;
   border: none;
   border-radius: var(--borderRadius);

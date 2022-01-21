@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 //wrapper for the About component
 export const AboutWrapper = styled.div`
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   color: var(--primary-100);

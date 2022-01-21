@@ -9,7 +9,7 @@ import {
   Title,
 } from "./Contact.style"
 import { graphql, useStaticQuery } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 import { nanoid } from "nanoid"
 
 const pageQuery = graphql`

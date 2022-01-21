@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 //wrapper for ProjectsList component
 export const ProjectsWrapper = styled.div`
-  cursor: pointer;
   color: var(--primary-100);
   display: flex;
   flex: 1;
