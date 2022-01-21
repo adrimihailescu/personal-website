@@ -1,7 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { ProWrapper } from "./style"
+import { ProWrapper } from "./ProjectsList.style"
 
 const ProjectsList = ({ projects = [] }) => {
   return (

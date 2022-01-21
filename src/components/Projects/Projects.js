@@ -1,5 +1,5 @@
 import React from "react"
-import { ProjectsWrapper, ContentProWrapper, Title } from "./style"
+import { ProjectsWrapper, ContentProWrapper, Title } from "./Projects.style"
 import ProjectsList from "../AllProjectsList/ProjectsList"
 import { graphql, useStaticQuery } from "gatsby"
 

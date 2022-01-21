@@ -1,5 +1,5 @@
 import React from "react"
-import { AboutWrapper, ContentWrapper, Title } from "./style"
+import { AboutWrapper, ContentWrapper, Title } from "./About.style"
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 

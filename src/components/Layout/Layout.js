@@ -3,33 +3,29 @@ import AboutMe from "../About/About"
 // import Footer from "../Footer/Footer"
 import Projects from "../Projects/Projects"
 import Contact from "../Contact/Contact"
-import { LayoutWrapper } from "./style"
+import { LayoutWrapper } from "./Layout.style"
 import { createGlobalStyle } from "styled-components"
+import stylesVars from "../../sharedStyles"
 
 const GlobalStyle = createGlobalStyle`
 body{
-  font-family: 'Inconsolata ', Montserrat;
+  font-family: 'Inconsolata ', monospace;
   line-height: 1.2;
   margin: 0;
   padding: 0;
   font-size: 20px;
+  color: ${stylesVars.colors.colorTitle}
 }
 h1{
  
   font-size: 3em;
 }
   :root{
-    --grey-1: #474747;
-    --grey-1000: #333538;
-    --primary-99: #ADA7FF;
-    --primary-100: #c1beff;
-    --primary-500: #645cff;
-    --primary-300: #938dff;
-    --primary-800: #37338c;
+
     --headingFont: "Inconsolata", monospace;
     --bodyFont: "Montserrat", sans-serif;
     --borderRadius: 5px;
-    --textColor: var(--primary-100);
+    --textColor: var(--primary100);
 }
 `
 
