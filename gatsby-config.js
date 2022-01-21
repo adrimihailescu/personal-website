@@ -28,6 +28,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-hubspot-forms`,
+      options: {
+        apiKey: process.env.HUBSPOT_API_KEY,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `fzp6pjxovx8c`,

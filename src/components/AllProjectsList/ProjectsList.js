@@ -16,12 +16,11 @@ const ProjectsList = ({ projects = [] }) => {
         const pathToImage = getImage(image)
 
         return (
-          <ProWrapper>
+          <ProWrapper key={id}>
             <a
               href="https://github.com/adrimihailescu?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              key={id}
             >
               <h5>{title}</h5>
             </a>

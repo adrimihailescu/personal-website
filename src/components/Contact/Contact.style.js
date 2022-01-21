@@ -45,7 +45,6 @@ export const Button = styled.button`
   color: var(--primary-500);
   background: lightpurple;
   border: 2px solid pink;
-  transform: rotate(180deg);
   cursor: pointer;
   display: inline-block;
   width: 100%;

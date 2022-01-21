@@ -5,7 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const AboutQuery = graphql`
   {
-    allContentfulAbout {
+    allContentfulAboutPage {
       nodes {
         title
         subtitle
@@ -21,7 +21,7 @@ const AboutQuery = graphql`
 const AboutMe = () => {
   const data = useStaticQuery(AboutQuery)
   console.log(data)
-  const { title, subtitle, id, content } = data.allContentfulAbout.nodes[0]
+  const { title, subtitle, id, content } = data.allContentfulAboutPage.nodes[0]
 
   return (
     <AboutWrapper>
