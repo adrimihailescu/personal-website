@@ -43,8 +43,8 @@ export const Button = styled.button`
   padding: 0.25em 1em;
   border-radius: var(--borderRadius);
   color: var(--primary-500);
-  background: papayawhip;
-  border: 2px solid papayawhip;
+  background: lightpurple;
+  border: 2px solid pink;
   transform: rotate(180deg);
   cursor: pointer;
   display: inline-block;
@@ -64,7 +64,7 @@ export const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
   color: palevioletred;
-  background: papayawhip;
+  background: lightpurple;
   border: none;
   border-radius: var(--borderRadius);
   width: 100%;
@@ -73,7 +73,7 @@ export const Input = styled.input`
 //Textarea
 export const Textarea = styled.textarea`
   color: palevioletred;
-  background: papayawhip;
+  background: lightpurple;
   border: none;
   border-radius: var(--borderRadius);
   padding: 10px;

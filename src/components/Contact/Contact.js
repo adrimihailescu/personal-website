@@ -8,12 +8,30 @@ import {
   Label,
   Title,
 } from "./style"
+import { graphql, useStaticQuery } from "gatsby"
+
+const ContactQuery = graphql`
+  {
+    allContentfulContactPage {
+      nodes {
+        subtitle
+        title
+        description
+      }
+    }
+  }
+`
 
 const Contact = () => {
+  const data = useStaticQuery(ContactQuery)
+  console.log(data)
+  const { title, subtitle, description } =
+    data.allContentfulContactPage.nodes[0]
   return (
     <ContactWrapper>
-      <Title>Contact</Title>
-      <h3>Want To Get In Touch?</h3>
+      <Title>{title}</Title>
+      <h3>{subtitle}</h3>
+      <p>{description}</p>
       <FormWrapper>
         <form>
           <div>

@@ -23,6 +23,7 @@ export const ContentWrapper = styled.div`
   border-radius: var(--borderRadius);
   padding: 10px;
   margin: 10px;
+  background-color: var(--grey-1);
 `
 
 //wrapper for the title
