@@ -1,8 +1,7 @@
 import React from "react"
-import AboutMe from "../About/About"
+
 // import Footer from "../Footer/Footer"
-import Projects from "../Projects/Projects"
-import Contact from "../Contact/Contact"
+
 import { LayoutWrapper } from "./Layout.style"
 import { createGlobalStyle } from "styled-components"
 import stylesVars from "../../sharedStyles"
@@ -33,12 +32,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <LayoutWrapper>
-        <AboutMe />
-        <Projects />
-        <Contact />
-        {children}
-      </LayoutWrapper>
+      <LayoutWrapper>{children}</LayoutWrapper>
     </>
   )
 }
