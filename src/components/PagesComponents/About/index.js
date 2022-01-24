@@ -20,7 +20,7 @@ const AboutQuery = graphql`
 
 const AboutMe = () => {
   const data = useStaticQuery(AboutQuery)
-  console.log(data)
+
   const { title, subtitle, id, content } = data.allContentfulAboutPage.nodes[0]
 
   return (

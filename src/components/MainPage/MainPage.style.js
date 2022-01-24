@@ -8,20 +8,22 @@ export const MainWrapper = styled.main`
 `
 
 export const SectionPanel = styled.section`
-  background: #6b0f9c;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
   color: white;
   text-align: center;
   align-items: center;
   transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
   font-size: 20px;
-  background-size: cover;
-  background-position: center;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
+  overflow-y: scroll;
+
   ${({ isActive }) =>
     isActive &&
     css`
@@ -33,11 +35,6 @@ export const SectionPanel = styled.section`
     margin: 0;
     width: 100%;
     transition: transform 0.5s;
-    /* border: 1px solid red; */
-    /* flex: 1 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
   }
 `
 

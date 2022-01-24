@@ -33,16 +33,14 @@ const query = graphql`
 
 const Projects = () => {
   const data = useStaticQuery(query)
-  console.log(data)
+
   const projects = data.allContentfulProjectsPage.edges[0].node
 
   return (
     <div>
       <h1>{projects.title}</h1>
       <h3>{projects.subtitle}</h3>
-      <div>
-        <ProjectsList projects={projects.projects} />
-      </div>
+      <ProjectsList projects={projects.projects} />
     </div>
   )
 }

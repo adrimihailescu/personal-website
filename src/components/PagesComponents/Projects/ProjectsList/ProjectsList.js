@@ -4,13 +4,13 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const ProjectsList = ({ projects = [] }) => {
   return (
-    <div>
+    <section>
       {projects.map(project => {
         const {
           id,
           title,
           image,
-          content: { tools, description },
+          content: { tools },
         } = project
         const pathToImage = getImage(image)
 
@@ -24,13 +24,12 @@ const ProjectsList = ({ projects = [] }) => {
               <h5>{title}</h5>
             </a>
             <GatsbyImage image={pathToImage} alt={title} />
-
             <p>Tools: {tools} </p>
-            <p> Description: {description}</p>
+            {/* <p> Description: {description}</p> */}
           </div>
         )
       })}
-    </div>
+    </section>
   )
 }
 
