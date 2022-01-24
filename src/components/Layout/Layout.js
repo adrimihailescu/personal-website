@@ -2,7 +2,6 @@ import React from "react"
 
 // import Footer from "../Footer/Footer"
 
-import { LayoutWrapper } from "./Layout.style"
 import { createGlobalStyle } from "styled-components"
 import stylesVars from "../../sharedStyles"
 
@@ -32,7 +31,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <LayoutWrapper>{children}</LayoutWrapper>
+      <div>{children}</div>
     </>
   )
 }

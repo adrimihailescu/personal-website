@@ -1,16 +1,6 @@
 import React, { useState } from "react"
-import {
-  ContactWrapper,
-  FormWrapper,
-  Button,
-  Input,
-  Textarea,
-  Label,
-  Title,
-} from "./Contact.style"
-import { graphql, useStaticQuery } from "gatsby"
 
-import { nanoid } from "nanoid"
+import { graphql, useStaticQuery } from "gatsby"
 
 const pageQuery = graphql`
   {
@@ -107,8 +97,8 @@ const Contact = () => {
   }
 
   return (
-    <ContactWrapper>
-      <Title>{title}</Title>
+    <div>
+      <h1>{title}</h1>
       <h3>{subtitle}</h3>
       <p>{description}</p>
       <form onSubmit={handleSubmit}>
@@ -121,12 +111,12 @@ const Contact = () => {
           switch (fields.fieldType) {
             case "textarea":
               return (
-                <Label key={`form-${fields.name}`}>
+                <label key={`form-${fields.name}`}>
                   <span>
                     {fields.label}
                     {isRequired ? "*" : null}
                   </span>
-                  <Textarea
+                  <textarea
                     type={fields.fieldType}
                     required
                     name={fields.name}
@@ -135,17 +125,17 @@ const Contact = () => {
                     value={formData[fields.name] || ""}
                     placeholder={fields.placeholder}
                   />
-                </Label>
+                </label>
               )
 
             default:
               return (
-                <Label key={`form-${fields.name}`}>
+                <label key={`form-${fields.name}`}>
                   <span>
                     {fields.label}
                     {isRequired ? "*" : null}
                   </span>
-                  <Input
+                  <input
                     type={fields.fieldType}
                     required
                     name={fields.name}
@@ -154,11 +144,11 @@ const Contact = () => {
                     value={formData[fields.name] || ""}
                     placeholder={fields.placeholder}
                   />
-                </Label>
+                </label>
               )
           }
         })}
-        <Button type="submit">{formSubmitText}</Button>
+        <button type="submit">{formSubmitText}</button>
       </form>
       {formsSubmitStatus.success ? (
         <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
@@ -168,7 +158,7 @@ const Contact = () => {
           Error submiting form, please try again later
         </p>
       ) : null}
-    </ContactWrapper>
+    </div>
   )
 }
 

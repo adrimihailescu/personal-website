@@ -34,10 +34,10 @@ export const SectionPanel = styled.section`
     width: 100%;
     transition: transform 0.5s;
     /* border: 1px solid red; */
-    flex: 1 0 auto;
+    /* flex: 1 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
   }
 `
 

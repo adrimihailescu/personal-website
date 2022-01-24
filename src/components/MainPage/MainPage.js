@@ -1,22 +1,11 @@
 import React, { useState } from "react"
-
+import About from "../PagesComponents/About"
+import Contact from "../PagesComponents/Contact"
+import Projects from "../PagesComponents/Projects"
+import NotFound from "../../pages/404"
 import { MainWrapper, SectionPanel, SectionPanelTitle } from "./MainPage.style"
-// import About from "../components/About/About"
-// import Contact from "../components/Contact/Contact"
-const pageData = {
-  home: {
-    id: "home",
-    title: "home test",
-  },
-  about: {
-    id: "about",
-    title: "about test",
-  },
-  contact: {
-    id: "contact",
-    title: "contact test",
-  },
-}
+
+const sectionPages = ["about", "projects", "contact"]
 
 const MainPage = () => {
   const [activePanel, setActivePanel] = useState(undefined)
@@ -31,32 +20,37 @@ const MainPage = () => {
 
   return (
     <MainWrapper>
-      {Object.keys(pageData).map(page => {
-        const pageItem = pageData[page]
-        // let RenderedElement
-        // switch (pageItem.id) {
-        //   case "about":
-        //     RenderedElement = About
-        //     break
-        //   default:
-        //     RenderedElement = Contact
-        //     break
-        // }
+      {sectionPages.map(sectionPage => {
+        let RenderedElement
+        switch (sectionPage) {
+          case "about":
+            RenderedElement = About
+            break
+          case "contact":
+            RenderedElement = Contact
+            break
+          case "projects":
+            RenderedElement = Projects
+            break
+          default:
+            RenderedElement = NotFound
+            break
+        }
         return (
           <SectionPanel
-            key={pageItem.id}
-            isActive={activePanel === pageItem.id}
-            onClick={() => handleClick(pageItem.id)}
+            key={`key-${sectionPage}`}
+            isActive={activePanel === sectionPage}
+            onClick={() => handleClick(sectionPage)}
           >
-            {/* <RenderedElement /> */}
+            <RenderedElement />
 
-            <SectionPanelTitle
+            {/* <SectionPanelTitle
               isTextVertical={
                 activePanel !== undefined && activePanel !== pageItem.id
               }
             >
               {pageItem.title}
-            </SectionPanelTitle>
+            </SectionPanelTitle> */}
           </SectionPanel>
         )
       })}

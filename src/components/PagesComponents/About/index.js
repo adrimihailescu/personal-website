@@ -1,5 +1,5 @@
 import React from "react"
-import { AboutWrapper, ContentWrapper, Title } from "./About.style"
+
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
@@ -24,13 +24,11 @@ const AboutMe = () => {
   const { title, subtitle, id, content } = data.allContentfulAboutPage.nodes[0]
 
   return (
-    <AboutWrapper>
-      <Title>{title}</Title>
+    <div>
+      <h1>{title}</h1>
       <h3>{subtitle}</h3>
-      <ContentWrapper>
-        {documentToReactComponents(JSON.parse(content.raw))}
-      </ContentWrapper>
-    </AboutWrapper>
+      <div>{documentToReactComponents(JSON.parse(content.raw))}</div>
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from "react"
-import { ProjectsWrapper, ContentProWrapper, Title } from "./Projects.style"
-import ProjectsList from "../AllProjectsList/ProjectsList"
+
+import ProjectsList from "./ProjectsList/ProjectsList"
 import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`
@@ -37,13 +37,13 @@ const Projects = () => {
   const projects = data.allContentfulProjectsPage.edges[0].node
 
   return (
-    <ProjectsWrapper>
-      <Title>{projects.title}</Title>
+    <div>
+      <h1>{projects.title}</h1>
       <h3>{projects.subtitle}</h3>
-      <ContentProWrapper>
+      <div>
         <ProjectsList projects={projects.projects} />
-      </ContentProWrapper>
-    </ProjectsWrapper>
+      </div>
+    </div>
   )
 }
 
