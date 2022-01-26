@@ -3,7 +3,7 @@ import About from "../PagesComponents/About"
 import Contact from "../PagesComponents/Contact"
 import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
-import { MainWrapper, SectionPanel, SectionPanelTitle } from "./MainPage.style"
+import { MainWrapper, SectionPanel } from "./MainPage.style"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -45,11 +45,11 @@ const MainPage = () => {
             <RenderedElement />
 
             {/* <SectionPanelTitle
-              isTextVertical={
-                activePanel !== undefined && activePanel !== pageItem.id
-              }
+            // isTextVertical={
+            //   activePanel !== undefined && activePanel !== sectionPage.id
+            // }
             >
-              {pageItem.title}
+              {sectionPage.title}
             </SectionPanelTitle> */}
           </SectionPanel>
         )
