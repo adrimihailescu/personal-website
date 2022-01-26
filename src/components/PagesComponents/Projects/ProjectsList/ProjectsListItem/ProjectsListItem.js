@@ -15,7 +15,6 @@ const ProjectsListItem = ({ title, image, tools }) => {
       </a>
       <GatsbyImage image={pathToImage} alt={title} />
       <p>Tools: {tools} </p>
-      {/* <p> Description: {description}</p> */}
     </li>
   )
 }

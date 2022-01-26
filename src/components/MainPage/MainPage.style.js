@@ -6,6 +6,11 @@ export const MainWrapper = styled.main`
   min-height: 100vh;
   overflow: hidden;
   display: flex;
+
+  @media (max-width: 700px) {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 `
 
 export const SectionPanel = styled.section`

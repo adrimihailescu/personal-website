@@ -20,7 +20,7 @@ const stylesVariables = {
 }
 
 export const SectionPanelTitle = styled.h1`
-  font-size: 60px;
+  font-size: 4rem;
   color: ${stylesVariables.colors.colorTitle};
   /* transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
   ${({ isTextVertical }) =>
@@ -39,6 +39,7 @@ export const DivPanel = styled.div`
   // content in About
   color: ${stylesVariables.colors.mainText};
   padding: 10px;
+  font-style: italic;
 `
 
 //create styled components for Contact form, all paragraphs, submit button, (label, input,textarea?),
