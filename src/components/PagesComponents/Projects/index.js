@@ -2,6 +2,7 @@ import React from "react"
 
 import ProjectsList from "./ProjectsList/ProjectsList"
 import { graphql, useStaticQuery } from "gatsby"
+import { SectionPanelTitle, SectionPanelSubtitle } from "../../../sharedStyles"
 
 const query = graphql`
   {
@@ -38,8 +39,8 @@ const Projects = () => {
 
   return (
     <div>
-      <h1>{projects.title}</h1>
-      <h3>{projects.subtitle}</h3>
+      <SectionPanelTitle>{projects.title}</SectionPanelTitle>
+      <SectionPanelSubtitle>{projects.subtitle}</SectionPanelSubtitle>
       <ProjectsList projects={projects.projects} />
     </div>
   )

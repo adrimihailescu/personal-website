@@ -23,6 +23,8 @@ const AboutQuery = graphql`
   }
 `
 
+//add styles for the DivPanel
+
 const AboutMe = () => {
   const data = useStaticQuery(AboutQuery)
 

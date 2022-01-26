@@ -22,13 +22,13 @@ const stylesVariables = {
 export const SectionPanelTitle = styled.h1`
   font-size: 60px;
   color: ${stylesVariables.colors.colorTitle};
-  transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
+  /* transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
   ${({ isTextVertical }) =>
     isTextVertical &&
     css`
       text-orientation: mixed;
       writing-mode: vertical-rl;
-    `};
+    `}; */
 `
 
 export const SectionPanelSubtitle = styled.h3`
@@ -40,5 +40,11 @@ export const DivPanel = styled.div`
   color: ${stylesVariables.colors.mainText};
   padding: 10px;
 `
+
+//create styled components for Contact form, all paragraphs, submit button, (label, input,textarea?),
+//styled components for Projects section
+// create styled components for ProjectsList ul;
+//create styled component for ProjectsListItem li and a tag (already a file)
+// add more  general stylesVariables like padding, margin etc
 
 export default stylesVariables
