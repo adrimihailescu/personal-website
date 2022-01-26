@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
+import { SectionPanelTitle, SectionPanelSubtitle } from "../../../sharedStyles"
 
 const pageQuery = graphql`
   {
@@ -98,8 +99,8 @@ const Contact = () => {
 
   return (
     <div>
-      <h1>{title}</h1>
-      <h3>{subtitle}</h3>
+      <SectionPanelTitle>{title}</SectionPanelTitle>
+      <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
       <p>{description}</p>
       <form onSubmit={handleSubmit}>
         {formFieldGroups.map(field => {
