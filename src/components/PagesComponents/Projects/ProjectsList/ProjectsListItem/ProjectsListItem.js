@@ -1,11 +1,12 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Card } from "./ProjectsListItem.style"
 
 const ProjectsListItem = ({ title, image, tools }) => {
   const pathToImage = getImage(image)
 
   return (
-    <li>
+    <Card>
       <a
         href="https://github.com/adrimihailescu?tab=repositories"
         target="_blank"
@@ -15,7 +16,7 @@ const ProjectsListItem = ({ title, image, tools }) => {
       </a>
       <GatsbyImage image={pathToImage} alt={title} />
       <p>Tools: {tools} </p>
-    </li>
+    </Card>
   )
 }
 

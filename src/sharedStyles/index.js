@@ -22,6 +22,8 @@ const stylesVariables = {
 export const SectionPanelTitle = styled.h1`
   font-size: 4rem;
   color: ${stylesVariables.colors.colorTitle};
+  text-transform: capitalize;
+  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
   /* transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
   ${({ isTextVertical }) =>
     isTextVertical &&
@@ -33,13 +35,26 @@ export const SectionPanelTitle = styled.h1`
 
 export const SectionPanelSubtitle = styled.h3`
   color: ${stylesVariables.colors.mainText};
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 `
 
-export const DivPanel = styled.div`
+export const DivPanelAbout = styled.div`
   // content in About
   color: ${stylesVariables.colors.mainText};
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   font-style: italic;
+  margin: 20px;
+  border-bottom: 2px;
+  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+`
+
+export const Cards = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 //create styled components for Contact form, all paragraphs, submit button, (label, input,textarea?),

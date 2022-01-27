@@ -5,7 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import {
   SectionPanelTitle,
   SectionPanelSubtitle,
-  DivPanel,
+  DivPanelAbout,
 } from "../../../sharedStyles"
 
 const AboutQuery = graphql`
@@ -34,7 +34,9 @@ const AboutMe = () => {
     <div>
       <SectionPanelTitle>{title}</SectionPanelTitle>
       <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-      <DivPanel>{documentToReactComponents(JSON.parse(content.raw))}</DivPanel>
+      <DivPanelAbout>
+        {documentToReactComponents(JSON.parse(content.raw))}
+      </DivPanelAbout>
     </div>
   )
 }

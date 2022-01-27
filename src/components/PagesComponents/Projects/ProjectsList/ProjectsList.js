@@ -1,9 +1,10 @@
 import React from "react"
 import ProjectsListItem from "./ProjectsListItem/ProjectsListItem"
+import { Cards } from "../../../../sharedStyles"
 
 const ProjectsList = ({ projects = [] }) => {
   return (
-    <ul>
+    <Cards>
       {projects.map(project => {
         const {
           id,
@@ -21,7 +22,7 @@ const ProjectsList = ({ projects = [] }) => {
           />
         )
       })}
-    </ul>
+    </Cards>
   )
 }
 

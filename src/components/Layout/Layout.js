@@ -39,6 +39,13 @@ body {
     flex-direction: column;
   }
 
+  input, textarea, select, button {
+  width : 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 `
 
 const Layout = ({ children }) => {
