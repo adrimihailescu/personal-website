@@ -6,6 +6,17 @@ export const MainWrapper = styled.main`
   min-height: 100vh;
   overflow: hidden;
   display: flex;
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: ${stylesVariables.colors.grey};
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: ${stylesVariables.colors.primary30};
+    border-radius: 20px;
+    border: 3px solid #37338c;
+  }
 
   @media (max-width: 700px) {
     -webkit-flex-direction: column;
