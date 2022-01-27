@@ -2,6 +2,12 @@ import React, { useState } from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
 import { SectionPanelTitle, SectionPanelSubtitle } from "../../../sharedStyles"
+import {
+  FormPanelContact,
+  ParagraphPanelContact,
+  LabelPanelContact,
+  InputPanelContact,
+} from "./Contact.style"
 
 const pageQuery = graphql`
   {
@@ -101,8 +107,8 @@ const Contact = () => {
     <div>
       <SectionPanelTitle>{title}</SectionPanelTitle>
       <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-      <p>{description}</p>
-      <form onSubmit={handleSubmit}>
+      <ParagraphPanelContact>{description}</ParagraphPanelContact>
+      <FormPanelContact onSubmit={handleSubmit}>
         {formFieldGroups.map(field => {
           const fields = field.fields[0]
           const isRequired = fields.required
@@ -112,7 +118,7 @@ const Contact = () => {
           switch (fields.fieldType) {
             case "textarea":
               return (
-                <label key={`form-${fields.name}`}>
+                <LabelPanelContact key={`form-${fields.name}`}>
                   <span>
                     {fields.label}
                     {isRequired ? "*" : null}
@@ -126,17 +132,17 @@ const Contact = () => {
                     value={formData[fields.name] || ""}
                     placeholder={fields.placeholder}
                   />
-                </label>
+                </LabelPanelContact>
               )
 
             default:
               return (
-                <label key={`form-${fields.name}`}>
+                <LabelPanelContact key={`form-${fields.name}`}>
                   <span>
                     {fields.label}
                     {isRequired ? "*" : null}
                   </span>
-                  <input
+                  <InputPanelContact
                     type={fields.fieldType}
                     required
                     name={fields.name}
@@ -145,12 +151,12 @@ const Contact = () => {
                     value={formData[fields.name] || ""}
                     placeholder={fields.placeholder}
                   />
-                </label>
+                </LabelPanelContact>
               )
           }
         })}
         <button type="submit">{formSubmitText}</button>
-      </form>
+      </FormPanelContact>
       {formsSubmitStatus.success ? (
         <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
       ) : null}

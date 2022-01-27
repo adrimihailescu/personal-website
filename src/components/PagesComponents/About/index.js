@@ -2,11 +2,8 @@ import React from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import {
-  SectionPanelTitle,
-  SectionPanelSubtitle,
-  DivPanelAbout,
-} from "../../../sharedStyles"
+import { SectionPanelTitle, SectionPanelSubtitle } from "../../../sharedStyles"
+import { DivPanelAbout } from "./About.style"
 
 const AboutQuery = graphql`
   {

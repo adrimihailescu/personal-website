@@ -39,28 +39,8 @@ export const SectionPanelSubtitle = styled.h3`
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 `
 
-export const DivPanelAbout = styled.div`
-  // content in About
-  color: ${stylesVariables.colors.mainText};
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  font-style: italic;
-  margin: 20px;
-  border-bottom: 2px;
-  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
-`
-
-export const Cards = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 //create styled components for Contact form, all paragraphs, submit button, (label, input,textarea?),
-//styled components for Projects section
-// create styled components for ProjectsList ul;
-//create styled component for ProjectsListItem li and a tag (already a file)
+
 // add more  general stylesVariables like padding, margin etc
 
 export default stylesVariables

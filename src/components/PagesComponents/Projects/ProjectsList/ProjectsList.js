@@ -1,6 +1,6 @@
 import React from "react"
 import ProjectsListItem from "./ProjectsListItem/ProjectsListItem"
-import { Cards } from "../../../../sharedStyles"
+import { Cards } from "./ProjectsList.style.js"
 
 const ProjectsList = ({ projects = [] }) => {
   return (
