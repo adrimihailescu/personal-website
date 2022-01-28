@@ -25,3 +25,11 @@ export const InputPanelContact = styled.input`
   margin: 20px;
   overflow: hidden;
 `
+
+export const TextareaPanelContact = styled.textarea`
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin: 20px;
+`

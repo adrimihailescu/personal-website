@@ -7,6 +7,7 @@ import {
   ParagraphPanelContact,
   LabelPanelContact,
   InputPanelContact,
+  TextareaPanelContact,
 } from "./Contact.style"
 
 const pageQuery = graphql`
@@ -123,7 +124,7 @@ const Contact = () => {
                     {fields.label}
                     {isRequired ? "*" : null}
                   </span>
-                  <textarea
+                  <TextareaPanelContact
                     type={fields.fieldType}
                     required
                     name={fields.name}
