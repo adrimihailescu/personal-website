@@ -2,21 +2,26 @@ import styled, { css } from "styled-components"
 import stylesVariables from "../../../sharedStyles"
 
 export const FormPanelContact = styled.form`
-  /* width: 100%; */
+  /* width: 600px; */
   display: flex;
   flex-direction: column;
   color: ${stylesVariables.colors.mainText};
+  margin: 50px;
 `
 
 export const ParagraphPanelContact = styled.p`
   color: ${stylesVariables.colors.mainText};
 `
 
-export const LabelPanelContact = styled.label``
+export const LabelPanelContact = styled.label`
+  display: block;
+`
 
 export const InputPanelContact = styled.input`
   border-radius: 10px;
+  display: block;
   padding: 10px;
-  min-width: 100%;
-  margin: 20px 20px;
+  width: 100%;
+  margin: 20px;
+  overflow: hidden;
 `

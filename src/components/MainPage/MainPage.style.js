@@ -48,9 +48,10 @@ export const SectionPanel = styled.section`
     `}
 
   // applyes to all child items of panel section
-  > * {
+   > div {
     margin: 0;
     width: 100%;
     transition: transform 0.5s;
+    max-width: 1200px;
   }
 `

@@ -42,7 +42,7 @@ const MainPage = () => {
             isActive={activePanel === sectionPage}
             onClick={() => handleClick(sectionPage)}
           >
-            <RenderedElement />
+            <RenderedElement className="section-item" />
 
             {/* <SectionPanelTitle
             // isTextVertical={
