@@ -33,3 +33,15 @@ export const TextareaPanelContact = styled.textarea`
   width: 100%;
   margin: 20px;
 `
+
+export const ButtonPanelContact = styled.button`
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: ${stylesVariables.colors.mainText};
+  align-self: center;
+`

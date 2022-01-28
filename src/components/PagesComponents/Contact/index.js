@@ -8,6 +8,7 @@ import {
   LabelPanelContact,
   InputPanelContact,
   TextareaPanelContact,
+  ButtonPanelContact,
 } from "./Contact.style"
 
 const pageQuery = graphql`
@@ -156,7 +157,7 @@ const Contact = () => {
               )
           }
         })}
-        <button type="submit">{formSubmitText}</button>
+        <ButtonPanelContact type="submit">{formSubmitText}</ButtonPanelContact>
       </FormPanelContact>
       {formsSubmitStatus.success ? (
         <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
