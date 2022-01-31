@@ -32,13 +32,13 @@ const query = graphql`
   }
 `
 
-const Projects = ({ isTextVertical }) => {
+const Projects = ({ isTextVertical, animateIn }) => {
   const data = useStaticQuery(query)
 
   const projects = data.allContentfulProjectsPage.edges[0].node
 
   return (
-    <div>
+    <div style={{ opacity: animateIn ? "1" : "0" }}>
       <SectionPanelTitle isTextVertical={isTextVertical}>
         {projects.title}
       </SectionPanelTitle>

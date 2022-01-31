@@ -46,6 +46,19 @@ export const SectionPanel = styled.section`
     css`
       flex: 10;
     `}
+  /* ${({ state }) =>
+    state === "entering" ||
+    (state === "entered" &&
+      css`
+        flex: 10;
+      `)} */
+
+  /* ${({ state }) =>
+    state === "exiting" ||
+    (state === "exited" &&
+      css`
+        flex: 1;
+      `)} */
 
   // applyes to all child items of panel section
    > div {

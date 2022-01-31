@@ -25,12 +25,69 @@ export const SectionPanelTitle = styled.h1`
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
-  transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
+  transition: all 0.25s ease;
   ${({ isTextVertical }) =>
     isTextVertical &&
     css`
+      margin: 20px 0 0 0;
       text-orientation: mixed;
       writing-mode: vertical-rl;
+    `};
+
+  ${({ state }) =>
+    state === "entering" &&
+    css`
+      transform: translateY(5%);
+      opacity: 0;
+      display: block;
+    `};
+  ${({ state }) =>
+    state === "entered" &&
+    css`
+      transform: translateY(0);
+      opacity: 1;
+    `};
+  ${({ state }) =>
+    state === "exiting" &&
+    css`
+      transform: translateY(2%);
+      opacity: 0.7;
+    `};
+  ${({ state }) =>
+    state === "exited" &&
+    css`
+      transform: translateY(5%);
+      opacity: 0;
+      display: none;
+    `};
+`
+
+export const SectionContent = styled.div`
+  transition: all 0.5s ease;
+
+  ${({ state }) =>
+    state === "entering" &&
+    css`
+      transform: translateY(5%);
+      opacity: 0;
+      display: block;
+    `};
+  ${({ state }) =>
+    state === "entered" &&
+    css`
+      transform: translateY(0);
+      opacity: 1;
+    `};
+  ${({ state }) =>
+    state === "exiting" &&
+    css`
+      transform: translateY(-5%);
+      opacity: 0;
+    `};
+  ${({ state }) =>
+    state === "exited" &&
+    css`
+      display: none;
     `};
 `
 

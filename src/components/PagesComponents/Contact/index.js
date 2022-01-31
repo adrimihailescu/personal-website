@@ -46,7 +46,7 @@ const pageQuery = graphql`
   }
 `
 
-const Contact = ({ isTextVertical }) => {
+const Contact = ({ isTextVertical, animateIn }) => {
   const [formData, setFormData] = useState({})
   const [formsSubmitStatus, setFormsSubmitStatus] = useState({
     success: false,
@@ -106,7 +106,7 @@ const Contact = ({ isTextVertical }) => {
   }
 
   return (
-    <div>
+    <div style={{ opacity: animateIn ? "1" : "0" }}>
       <SectionPanelTitle isTextVertical={isTextVertical}>
         {title}
       </SectionPanelTitle>
