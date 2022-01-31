@@ -15,7 +15,8 @@ const ProjectsListItem = ({ title, image, tools }) => {
         <h5>{title}</h5>
       </a>
       <GatsbyImage image={pathToImage} alt={title} />
-      <p>Tools: {tools} </p>
+
+      <p>Tools: {tools.join("|")} </p>
     </Card>
   )
 }
