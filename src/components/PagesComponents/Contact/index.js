@@ -46,7 +46,7 @@ const pageQuery = graphql`
   }
 `
 
-const Contact = () => {
+const Contact = ({ isTextVertical }) => {
   const [formData, setFormData] = useState({})
   const [formsSubmitStatus, setFormsSubmitStatus] = useState({
     success: false,
@@ -107,7 +107,9 @@ const Contact = () => {
 
   return (
     <div>
-      <SectionPanelTitle>{title}</SectionPanelTitle>
+      <SectionPanelTitle isTextVertical={isTextVertical}>
+        {title}
+      </SectionPanelTitle>
       <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
       <ParagraphPanelContact>{description}</ParagraphPanelContact>
       <FormPanelContact onSubmit={handleSubmit}>

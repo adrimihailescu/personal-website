@@ -32,14 +32,16 @@ const query = graphql`
   }
 `
 
-const Projects = () => {
+const Projects = ({ isTextVertical }) => {
   const data = useStaticQuery(query)
 
   const projects = data.allContentfulProjectsPage.edges[0].node
 
   return (
     <div>
-      <SectionPanelTitle>{projects.title}</SectionPanelTitle>
+      <SectionPanelTitle isTextVertical={isTextVertical}>
+        {projects.title}
+      </SectionPanelTitle>
       <SectionPanelSubtitle>{projects.subtitle}</SectionPanelSubtitle>
       <ProjectsList projects={projects.projects} />
     </div>

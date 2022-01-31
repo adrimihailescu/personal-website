@@ -25,13 +25,13 @@ export const SectionPanelTitle = styled.h1`
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
-  /* transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
+  transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11) 0.5s;
   ${({ isTextVertical }) =>
     isTextVertical &&
     css`
       text-orientation: mixed;
       writing-mode: vertical-rl;
-    `}; */
+    `};
 `
 
 export const SectionPanelSubtitle = styled.h3`

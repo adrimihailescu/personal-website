@@ -22,14 +22,16 @@ const AboutQuery = graphql`
 
 //add styles for the DivPanel
 
-const AboutMe = () => {
+const AboutMe = ({ isTextVertical }) => {
   const data = useStaticQuery(AboutQuery)
 
   const { title, subtitle, content } = data.allContentfulAboutPage.nodes[0]
 
   return (
     <div>
-      <SectionPanelTitle>{title}</SectionPanelTitle>
+      <SectionPanelTitle isTextVertical={isTextVertical}>
+        {title}
+      </SectionPanelTitle>
       <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
       <DivPanelAbout>
         {documentToReactComponents(JSON.parse(content.raw))}

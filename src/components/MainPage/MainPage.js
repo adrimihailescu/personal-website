@@ -11,9 +11,7 @@ const MainPage = () => {
   const [activePanel, setActivePanel] = useState(undefined)
 
   const handleClick = id => {
-    if (activePanel === id) {
-      setActivePanel(undefined)
-    } else {
+    if (activePanel !== id) {
       setActivePanel(id)
     }
   }
@@ -36,13 +34,19 @@ const MainPage = () => {
             RenderedElement = NotFound
             break
         }
+
+        const isActive = activePanel === sectionPage
+        const isTextVertical = activePanel !== undefined && !isActive
         return (
           <SectionPanel
             key={`key-${sectionPage}`}
-            isActive={activePanel === sectionPage}
+            isActive={isActive}
             onClick={() => handleClick(sectionPage)}
           >
-            <RenderedElement className="section-item" />
+            <RenderedElement
+              className="section-item"
+              isTextVertical={isTextVertical}
+            />
           </SectionPanel>
         )
       })}
