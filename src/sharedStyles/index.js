@@ -17,6 +17,7 @@ const stylesVariables = {
     lg: "20px",
     xl: "300px",
   },
+  font: {},
 }
 
 export const SectionPanelTitle = styled.h1`
