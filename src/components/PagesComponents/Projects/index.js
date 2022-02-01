@@ -1,45 +1,16 @@
 import React from "react"
 import { Transition } from "react-transition-group"
+
 import ProjectsList from "./ProjectsList/ProjectsList"
-import { graphql, useStaticQuery } from "gatsby"
+
 import {
   SectionPanelTitle,
   SectionPanelSubtitle,
   SectionContent,
 } from "../../../sharedStyles"
 
-const query = graphql`
-  {
-    allContentfulProjectsPage {
-      edges {
-        node {
-          subtitle
-          title
-          projects {
-            id
-            image {
-              gatsbyImageData(
-                layout: CONSTRAINED
-                placeholder: DOMINANT_COLOR
-                jpegProgressive: true
-              )
-            }
-            title
-            content {
-              description
-              tools
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-const Projects = ({ isTextVertical, animateIn, animateText }) => {
-  const data = useStaticQuery(query)
-
-  const projects = data.allContentfulProjectsPage.edges[0].node
+const Projects = ({ isTextVertical, animateIn, animateText, data }) => {
+  const projects = data
 
   return (
     <>

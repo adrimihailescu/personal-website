@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Transition } from "react-transition-group"
-import { graphql, useStaticQuery } from "gatsby"
+
 import {
   SectionPanelTitle,
   SectionPanelSubtitle,
@@ -15,55 +15,21 @@ import {
   ButtonPanelContact,
 } from "./Contact.style"
 
-const pageQuery = graphql`
-  {
-    allContentfulContactPage {
-      nodes {
-        subtitle
-        title
-        description
-      }
-    }
-
-    allHubspotForm {
-      nodes {
-        portalId
-        name
-        submitText
-        redirect
-        formFieldGroups {
-          fields {
-            label
-            name
-            required
-            fieldType
-            placeholder
-            enabled
-          }
-        }
-        inlineMessage
-      }
-    }
-  }
-`
-
-const Contact = ({ isTextVertical, animateIn, animateText }) => {
-  const [formData, setFormData] = useState({})
-  const [formsSubmitStatus, setFormsSubmitStatus] = useState({
-    success: false,
-    fail: false,
-  })
-  const data = useStaticQuery(pageQuery)
-  const { title, subtitle, description } =
-    data.allContentfulContactPage.nodes[0]
-
+const Contact = ({ isTextVertical, animateIn, animateText, data }) => {
+  const { title, subtitle, description } = data.page
   const {
     portalId,
     name: formName,
     submitText: formSubmitText,
     formFieldGroups,
     inlineMessage: formSubmitSuccess,
-  } = data.allHubspotForm.nodes[0]
+  } = data.form
+
+  const [formData, setFormData] = useState({})
+  const [formsSubmitStatus, setFormsSubmitStatus] = useState({
+    success: false,
+    fail: false,
+  })
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -108,7 +74,6 @@ const Contact = ({ isTextVertical, animateIn, animateText }) => {
 
   return (
     <>
-      {/* // <div style={{ opacity: animateIn ? "1" : "0" }}> */}
       <Transition in={animateText} timeout={300}>
         {state => (
           <SectionPanelTitle isTextVertical={isTextVertical} state={state}>
@@ -186,7 +151,6 @@ const Contact = ({ isTextVertical, animateIn, animateText }) => {
           </SectionContent>
         )}
       </Transition>
-      {/* // </div> */}
     </>
   )
 }

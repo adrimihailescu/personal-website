@@ -1,8 +1,7 @@
 import React from "react"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { Transition } from "react-transition-group"
 
-import { graphql, useStaticQuery } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import {
   SectionPanelTitle,
   SectionPanelSubtitle,
@@ -10,27 +9,10 @@ import {
 } from "../../../sharedStyles"
 import { DivPanelAbout } from "./About.style"
 
-const AboutQuery = graphql`
-  {
-    allContentfulAboutPage {
-      nodes {
-        title
-        subtitle
-        id
-        content {
-          raw
-        }
-      }
-    }
-  }
-`
-
 //add styles for the DivPanel
 
-const AboutMe = ({ isTextVertical, animateIn, animateText }) => {
-  const data = useStaticQuery(AboutQuery)
-
-  const { title, subtitle, content } = data.allContentfulAboutPage.nodes[0]
+const AboutMe = ({ isTextVertical, animateIn, animateText, data }) => {
+  const { title, subtitle, content } = data
 
   return (
     <>

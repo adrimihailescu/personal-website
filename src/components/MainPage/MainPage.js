@@ -1,14 +1,18 @@
 import React, { useState } from "react"
+import { SwitchTransition, CSSTransition } from "react-transition-group"
+import GetWebsiteData from "./query"
+
 import About from "../PagesComponents/About"
 import Contact from "../PagesComponents/Contact"
 import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
+
 import { MainWrapper, SectionPanel } from "./MainPage.style"
-import { SwitchTransition, CSSTransition } from "react-transition-group"
 
 const sectionPages = ["about", "projects", "contact"]
 
 const MainPage = () => {
+  const data = GetWebsiteData()
   const [activePanel, setActivePanel] = useState(undefined)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -33,16 +37,22 @@ const MainPage = () => {
             {console.log("-------")}
             {console.log(state)}
             {sectionPages.map(sectionPage => {
-              let RenderedElement
+              let RenderedElement, elementData
               switch (sectionPage) {
                 case "about":
                   RenderedElement = About
+                  elementData = data.allContentfulAboutPage.nodes[0]
                   break
                 case "contact":
                   RenderedElement = Contact
+                  elementData = {
+                    page: data.allContentfulContactPage.nodes[0],
+                    form: data.allHubspotForm.nodes[0],
+                  }
                   break
                 case "projects":
                   RenderedElement = Projects
+                  elementData = data.allContentfulProjectsPage.edges[0].node
                   break
                 default:
                   RenderedElement = NotFound
@@ -60,10 +70,11 @@ const MainPage = () => {
                   onClick={() => handleClick(sectionPage)}
                 >
                   <RenderedElement
-                    animateText={state === "entered" && !isActive}
-                    animateIn={state === "entered" && isActive}
+                    data={elementData}
                     className="section-item"
                     isTextVertical={activePanel}
+                    animateText={state === "entered" && !isActive}
+                    animateIn={state === "entered" && isActive}
                   />
                 </SectionPanel>
               )
