@@ -9,8 +9,8 @@ export const FormPanelContact = styled.form`
   color: ${stylesVariables.colors.mainText};
   margin: 40px;
   padding: 10px;
-  background-color: #923cb5;
-  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+  /* background-color: #923cb5;
+  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%); */
 `
 
 export const ParagraphPanelContact = styled.p`

@@ -18,16 +18,19 @@ const stylesVariables = {
     xl: "300px",
   },
   easing: {
-    InQuint: " 0.6s cubic-bezier(0.64, 0, 0.78, 0)",
-    InOUtQuint: "0.6s cubic-bezier(0.83, 0, 0.17, 1)",
-    InExpo: "0.6s cubic-bezier(0.7, 0, 0.84, 0)",
-    InOutBack: "0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6)",
-    InBack: "0.6s cubic-bezier(0.36, 0, 0.66, -0.56)",
-    InSine: "0.6s cubic-bezier(0.12, 0, 0.39, 0)",
-    OutSine: "0.6s cubic-bezier(0.61, 1, 0.88, 1)",
-    InOutSine: "0.6s cubic-bezier(0.37, 0, 0.63, 1)",
-    InQuad: "0.6s cubic-bezier(0.11, 0, 0.5, 0)",
-    OutQuint: "0.6s cubic-bezier(0.45, 0, 0.55, 1)",
+    inQuint: "cubic-bezier(0.64, 0, 0.78, 0)",
+    inOUtQuint: "cubic-bezier(0.83, 0, 0.17, 1)",
+    inExpo: "cubic-bezier(0.7, 0, 0.84, 0)",
+    inOutBack: "cubic-bezier(0.68, -0.6, 0.32, 1.6)",
+    inBack: "cubic-bezier(0.36, 0, 0.66, -0.56)",
+    inSine: "cubic-bezier(0.12, 0, 0.39, 0)",
+    outSine: "cubic-bezier(0.61, 1, 0.88, 1)",
+    inOutSine: "cubic-bezier(0.37, 0, 0.63, 1)",
+    inQuad: "cubic-bezier(0.11, 0, 0.5, 0)",
+    outQuint: "cubic-bezier(0.45, 0, 0.55, 1)",
+  },
+  animationTime: {
+    mainPage: 600,
   },
 }
 
@@ -43,6 +46,7 @@ export const SectionPanelTitle = styled.h1`
       margin: 20px 0 0 0;
       text-orientation: mixed;
       writing-mode: vertical-rl;
+      /* font-size: 80px; */
     `};
 
   ${({ state }) =>
@@ -107,9 +111,5 @@ export const SectionPanelSubtitle = styled.h3`
   font-size: 1.8rem;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 `
-
-//create styled components for Contact form, all paragraphs, submit button, (label, input,textarea?),
-
-// add more  general stylesVariables like padding, margin etc
 
 export default stylesVariables

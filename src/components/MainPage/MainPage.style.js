@@ -31,7 +31,8 @@ export const SectionPanel = styled.section`
   color: ${stylesVariables.colors.mainColor};
   text-align: center;
   align-items: center;
-  transition: ${stylesVariables.easing.OutSine};
+  transition: all ${stylesVariables.animationTime.mainPage}ms
+    ${stylesVariables.easing.outSine};
   /* transition: all 0.7s ease; */ //original
 
   font-size: 20px;

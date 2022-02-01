@@ -6,7 +6,7 @@ export const Card = styled.li`
   padding: 10px;
   margin: 10px;
   background-color: ${stylesVariables.colors.grey};
-  /* transition: ${stylesVariables.easing.InQuad}; */
+
   border-radius: 30px;
   a {
     text-decoration: none;
