@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-// import stylesVariables from "../../../../sharedStyles"
+import stylesVariables from "../../../../sharedStyles"
 
 export const Cards = styled.ul`
   display: -webkit-box;

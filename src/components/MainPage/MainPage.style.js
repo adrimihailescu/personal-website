@@ -31,7 +31,9 @@ export const SectionPanel = styled.section`
   color: ${stylesVariables.colors.mainColor};
   text-align: center;
   align-items: center;
-  transition: all 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11);
+  transition: ${stylesVariables.easing.OutSine};
+  /* transition: all 0.7s ease; */ //original
+
   font-size: 20px;
   flex: 1;
   justify-content: flex-start;
