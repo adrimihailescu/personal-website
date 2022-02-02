@@ -9,7 +9,7 @@ import {
   SectionContent,
 } from "../../../sharedStyles"
 
-const Projects = ({ isTextVertical, animateIn, animateText, data }) => {
+const Projects = ({ isTextVertical, animateIn, data }) => {
   const projects = data
 
   return (

@@ -15,7 +15,7 @@ import {
   ButtonPanelContact,
 } from "./Contact.style"
 
-const Contact = ({ isTextVertical, animateIn, animateText, data }) => {
+const Contact = ({ isTextVertical, animateIn, data }) => {
   const { title, subtitle, description } = data.page
   const {
     portalId,

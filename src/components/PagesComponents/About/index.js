@@ -11,7 +11,7 @@ import { DivPanelAbout } from "./About.style"
 
 //add styles for the DivPanel
 
-const AboutMe = ({ isTextVertical, animateIn, animateText, data }) => {
+const AboutMe = ({ isTextVertical, animateIn, data }) => {
   const { title, subtitle, content } = data
 
   return (

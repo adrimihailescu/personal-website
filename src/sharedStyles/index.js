@@ -21,6 +21,7 @@ const stylesVariables = {
     inQuint: "cubic-bezier(0.64, 0, 0.78, 0)",
     inOUtQuint: "cubic-bezier(0.83, 0, 0.17, 1)",
     inExpo: "cubic-bezier(0.7, 0, 0.84, 0)",
+    outExpo: "cubic-bezier(0.16, 1, 0.3, 1)",
     inOutBack: "cubic-bezier(0.68, -0.6, 0.32, 1.6)",
     inBack: "cubic-bezier(0.36, 0, 0.66, -0.56)",
     inSine: "cubic-bezier(0.12, 0, 0.39, 0)",
@@ -28,56 +29,72 @@ const stylesVariables = {
     inOutSine: "cubic-bezier(0.37, 0, 0.63, 1)",
     inQuad: "cubic-bezier(0.11, 0, 0.5, 0)",
     outQuint: "cubic-bezier(0.45, 0, 0.55, 1)",
+    outCirc: "cubic-bezier(0, 0.55, 0.45, 1)",
   },
   animationTime: {
     mainPage: 600,
+    menuTitles: 200,
   },
 }
+
+export const SectionMenuStyle = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ${stylesVariables.animationTime.menuTitles}ms;
+
+  // section vertical when contracts
+  ${({ isHidden, state }) =>
+    state === "exiting" &&
+    !isHidden &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: translateX(-100%);
+      opacity: 0.5;
+      display: block;
+    `};
+  ${({ isHidden, state }) =>
+    state === "exited" &&
+    !isHidden &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: translateX(0%);
+      opacity: 1;
+    `};
+
+  // section vertical when expands
+  ${({ isHidden, state }) =>
+    state === "entering" &&
+    isHidden &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: translateY(-100%);
+      opacity: 0.5;
+    `};
+  ${({ isHidden, state }) =>
+    state === "entered" &&
+    isHidden &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: translateY(0%);
+      opacity: 0;
+      display: none;
+    `};
+`
 
 export const SectionPanelTitle = styled.h1`
   font-size: 4rem;
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
-  transition: all 0.25s ease;
   ${({ isTextVertical }) =>
     isTextVertical &&
     css`
-      margin: 20px 0 0 0;
       text-orientation: mixed;
       writing-mode: vertical-rl;
-      /* font-size: 80px; */
-    `};
-
-  ${({ isHidden, state }) =>
-    state === "entering" &&
-    isHidden &&
-    css`
-      transform: translateY(5%);
-      opacity: 1;
-      display: block;
-    `};
-  ${({ isHidden, state }) =>
-    state === "entered" &&
-    !isHidden &&
-    css`
-      transform: translateY(0);
-      opacity: 1;
-    `};
-  ${({ isHidden, state }) =>
-    state === "exiting" &&
-    isHidden &&
-    css`
-      transform: translateY(2%);
-      opacity: 0;
-    `};
-  ${({ isHidden, state }) =>
-    state === "exited" &&
-    isHidden &&
-    css`
-      transform: translateY(5%);
-      opacity: 0;
-      display: none;
     `};
 `
 

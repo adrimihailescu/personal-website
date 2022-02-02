@@ -25,6 +25,7 @@ export const MainWrapper = styled.main`
 `
 
 export const SectionPanel = styled.section`
+  position: relative;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
@@ -43,11 +44,13 @@ export const SectionPanel = styled.section`
   flex-direction: column;
   max-height: 100vh;
   overflow-y: scroll;
+  cursor: pointer;
 
   ${({ isActive }) =>
     isActive &&
     css`
       flex: 10;
+      cursor: default;
     `}
   /* ${({ state }) =>
     state === "entering" ||

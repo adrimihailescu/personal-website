@@ -12,7 +12,10 @@ import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
 
 import { MainWrapper, SectionPanel } from "./MainPage.style"
-import { SectionPanelTitle } from "../../sharedStyles"
+import StylesVariables, {
+  SectionPanelTitle,
+  SectionMenuStyle,
+} from "../../sharedStyles"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -35,12 +38,11 @@ const MainPage = () => {
         addEndListener={(node, done) =>
           node.addEventListener("transitionend", done, setIsAnimating(false))
         }
+        timeout={StylesVariables.animationTime.mainPage}
         classNames="transition-state"
       >
-        {state => (
+        {mainWrapperState => (
           <MainWrapper>
-            {console.log("-------")}
-            {console.log(state)}
             {sectionPages.map(sectionPage => {
               let RenderedElement, elementData, sectionTitle
               switch (sectionPage) {
@@ -68,7 +70,6 @@ const MainPage = () => {
               }
 
               const isActive = activePanel === sectionPage
-              // const isTextVertical = activePanel !== undefined && !isActive
               return (
                 <SectionPanel
                   key={`key-${sectionPage}`}
@@ -77,25 +78,22 @@ const MainPage = () => {
                   className={`${sectionPage}-section`}
                   onClick={() => handleClick(sectionPage)}
                 >
-                  {sectionTitle && (
-                    <Transition in={state === "exited"} timeout={300}>
-                      {titleState => (
-                        <SectionPanelTitle
-                          isTextVertical={activePanel !== undefined}
-                          isHidden={isActive}
-                          state={titleState}
-                        >
+                  <Transition
+                    in={isActive}
+                    timeout={StylesVariables.animationTime.menuTitles}
+                  >
+                    {titleState => (
+                      <SectionMenuStyle isHidden={isActive} state={titleState}>
+                        <SectionPanelTitle isTextVertical={true}>
                           {sectionTitle}
                         </SectionPanelTitle>
-                      )}
-                    </Transition>
-                  )}
+                      </SectionMenuStyle>
+                    )}
+                  </Transition>
                   <RenderedElement
                     data={elementData}
-                    className="section-item"
                     isTextVertical={activePanel}
-                    animateText={state === "entered" && !isActive}
-                    animateIn={state === "entered" && isActive}
+                    animateIn={mainWrapperState === "entered" && isActive}
                   />
                 </SectionPanel>
               )
