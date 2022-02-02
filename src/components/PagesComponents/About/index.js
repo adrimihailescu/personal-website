@@ -15,28 +15,17 @@ const AboutMe = ({ isTextVertical, animateIn, animateText, data }) => {
   const { title, subtitle, content } = data
 
   return (
-    <>
-      <Transition in={animateText} timeout={300}>
-        {state => (
-          <SectionPanelTitle isTextVertical={isTextVertical} state={state}>
-            {title}
-          </SectionPanelTitle>
-        )}
-      </Transition>
-      <Transition in={animateIn} timeout={500}>
-        {state => (
-          <SectionContent state={state}>
-            <SectionPanelTitle isTextVertical={false}>
-              {title}
-            </SectionPanelTitle>
-            <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-            <DivPanelAbout>
-              {documentToReactComponents(JSON.parse(content.raw))}
-            </DivPanelAbout>
-          </SectionContent>
-        )}
-      </Transition>
-    </>
+    <Transition in={animateIn} timeout={500}>
+      {state => (
+        <SectionContent state={state}>
+          <SectionPanelTitle isTextVertical={false}>{title}</SectionPanelTitle>
+          <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
+          <DivPanelAbout>
+            {documentToReactComponents(JSON.parse(content.raw))}
+          </DivPanelAbout>
+        </SectionContent>
+      )}
+    </Transition>
   )
 }
 

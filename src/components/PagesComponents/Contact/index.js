@@ -73,85 +73,74 @@ const Contact = ({ isTextVertical, animateIn, animateText, data }) => {
   }
 
   return (
-    <>
-      <Transition in={animateText} timeout={300}>
-        {state => (
-          <SectionPanelTitle isTextVertical={isTextVertical} state={state}>
-            {title}
-          </SectionPanelTitle>
-        )}
-      </Transition>
-      <Transition in={animateIn} timeout={500}>
-        {state => (
-          <SectionContent state={state}>
-            <SectionPanelTitle isTextVertical={false}>
-              {title}
-            </SectionPanelTitle>
-            <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-            <ParagraphPanelContact>{description}</ParagraphPanelContact>
-            <FormPanelContact onSubmit={handleSubmit}>
-              {formFieldGroups.map(field => {
-                const fields = field.fields[0]
-                const isRequired = fields.required
+    <Transition in={animateIn} timeout={500}>
+      {state => (
+        <SectionContent state={state}>
+          <SectionPanelTitle isTextVertical={false}>{title}</SectionPanelTitle>
+          <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
+          <ParagraphPanelContact>{description}</ParagraphPanelContact>
+          <FormPanelContact onSubmit={handleSubmit}>
+            {formFieldGroups.map(field => {
+              const fields = field.fields[0]
+              const isRequired = fields.required
 
-                if (!fields.enabled) return
+              if (!fields.enabled) return
 
-                switch (fields.fieldType) {
-                  case "textarea":
-                    return (
-                      <LabelPanelContact key={`form-${fields.name}`}>
-                        <span>
-                          {fields.label}
-                          {isRequired ? "*" : null}
-                        </span>
-                        <TextareaPanelContact
-                          type={fields.fieldType}
-                          required
-                          name={fields.name}
-                          required={isRequired}
-                          onChange={handleChange}
-                          value={formData[fields.name] || ""}
-                          placeholder={fields.placeholder}
-                        />
-                      </LabelPanelContact>
-                    )
+              switch (fields.fieldType) {
+                case "textarea":
+                  return (
+                    <LabelPanelContact key={`form-${fields.name}`}>
+                      <span>
+                        {fields.label}
+                        {isRequired ? "*" : null}
+                      </span>
+                      <TextareaPanelContact
+                        type={fields.fieldType}
+                        required
+                        name={fields.name}
+                        required={isRequired}
+                        onChange={handleChange}
+                        value={formData[fields.name] || ""}
+                        placeholder={fields.placeholder}
+                      />
+                    </LabelPanelContact>
+                  )
 
-                  default:
-                    return (
-                      <LabelPanelContact key={`form-${fields.name}`}>
-                        <span>
-                          {fields.label}
-                          {isRequired ? "*" : null}
-                        </span>
-                        <InputPanelContact
-                          type={fields.fieldType}
-                          required
-                          name={fields.name}
-                          required={isRequired}
-                          onChange={handleChange}
-                          value={formData[fields.name] || ""}
-                          placeholder={fields.placeholder}
-                        />
-                      </LabelPanelContact>
-                    )
-                }
-              })}
-              <ButtonPanelContact type="submit">
-                {formSubmitText}
-              </ButtonPanelContact>
-            </FormPanelContact>
-            {formsSubmitStatus.success ? (
-              <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
-            ) : null}
-            {formsSubmitStatus.fail ? (
-              <p style={{ color: "red" }}>
-                Error submiting form, please try again later
-              </p>
-            ) : null}
-          </SectionContent>
-        )}
-      </Transition>
-    </>
+                default:
+                  return (
+                    <LabelPanelContact key={`form-${fields.name}`}>
+                      <span>
+                        {fields.label}
+                        {isRequired ? "*" : null}
+                      </span>
+                      <InputPanelContact
+                        type={fields.fieldType}
+                        required
+                        name={fields.name}
+                        required={isRequired}
+                        onChange={handleChange}
+                        value={formData[fields.name] || ""}
+                        placeholder={fields.placeholder}
+                      />
+                    </LabelPanelContact>
+                  )
+              }
+            })}
+            <ButtonPanelContact type="submit">
+              {formSubmitText}
+            </ButtonPanelContact>
+          </FormPanelContact>
+          {formsSubmitStatus.success ? (
+            <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
+          ) : null}
+          {formsSubmitStatus.fail ? (
+            <p style={{ color: "red" }}>
+              Error submiting form, please try again later
+            </p>
+          ) : null}
+        </SectionContent>
+      )}
+    </Transition>
   )
 }
 

@@ -1,5 +1,9 @@
 import React, { useState } from "react"
-import { SwitchTransition, CSSTransition } from "react-transition-group"
+import {
+  SwitchTransition,
+  CSSTransition,
+  Transition,
+} from "react-transition-group"
 import GetWebsiteData from "./query"
 
 import About from "../PagesComponents/About"
@@ -8,6 +12,7 @@ import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
 
 import { MainWrapper, SectionPanel } from "./MainPage.style"
+import { SectionPanelTitle } from "../../sharedStyles"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -37,11 +42,12 @@ const MainPage = () => {
             {console.log("-------")}
             {console.log(state)}
             {sectionPages.map(sectionPage => {
-              let RenderedElement, elementData
+              let RenderedElement, elementData, sectionTitle
               switch (sectionPage) {
                 case "about":
                   RenderedElement = About
                   elementData = data.allContentfulAboutPage.nodes[0]
+                  sectionTitle = elementData.title
                   break
                 case "contact":
                   RenderedElement = Contact
@@ -49,10 +55,12 @@ const MainPage = () => {
                     page: data.allContentfulContactPage.nodes[0],
                     form: data.allHubspotForm.nodes[0],
                   }
+                  sectionTitle = elementData.page.title
                   break
                 case "projects":
                   RenderedElement = Projects
                   elementData = data.allContentfulProjectsPage.edges[0].node
+                  sectionTitle = elementData.title
                   break
                 default:
                   RenderedElement = NotFound
@@ -69,6 +77,19 @@ const MainPage = () => {
                   className={`${sectionPage}-section`}
                   onClick={() => handleClick(sectionPage)}
                 >
+                  {sectionTitle && (
+                    <Transition in={state === "exited"} timeout={300}>
+                      {titleState => (
+                        <SectionPanelTitle
+                          isTextVertical={activePanel !== undefined}
+                          isHidden={isActive}
+                          state={titleState}
+                        >
+                          {sectionTitle}
+                        </SectionPanelTitle>
+                      )}
+                    </Transition>
+                  )}
                   <RenderedElement
                     data={elementData}
                     className="section-item"

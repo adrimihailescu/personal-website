@@ -13,28 +13,17 @@ const Projects = ({ isTextVertical, animateIn, animateText, data }) => {
   const projects = data
 
   return (
-    <>
-      {/* // <div style={{ opacity: animateIn ? "1" : "0" }}> */}
-      <Transition in={animateText} timeout={300}>
-        {state => (
-          <SectionPanelTitle isTextVertical={isTextVertical} state={state}>
+    <Transition in={animateIn} timeout={500}>
+      {state => (
+        <SectionContent state={state}>
+          <SectionPanelTitle isTextVertical={false}>
             {projects.title}
           </SectionPanelTitle>
-        )}
-      </Transition>
-      <Transition in={animateIn} timeout={500}>
-        {state => (
-          <SectionContent state={state}>
-            <SectionPanelTitle isTextVertical={false}>
-              {projects.title}
-            </SectionPanelTitle>
-            <SectionPanelSubtitle>{projects.subtitle}</SectionPanelSubtitle>
-            <ProjectsList projects={projects.projects} />
-          </SectionContent>
-        )}
-      </Transition>
-    </>
-    //  {/* </div> */}
+          <SectionPanelSubtitle>{projects.subtitle}</SectionPanelSubtitle>
+          <ProjectsList projects={projects.projects} />
+        </SectionContent>
+      )}
+    </Transition>
   )
 }
 

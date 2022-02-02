@@ -32,7 +32,7 @@ export const SectionPanel = styled.section`
   text-align: center;
   align-items: center;
   transition: all ${stylesVariables.animationTime.mainPage}ms
-    ${stylesVariables.easing.outSine};
+    ${stylesVariables.easing.inQuad};
   /* transition: all 0.7s ease; */ //original
 
   font-size: 20px;

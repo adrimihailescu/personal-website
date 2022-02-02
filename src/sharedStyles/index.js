@@ -49,27 +49,31 @@ export const SectionPanelTitle = styled.h1`
       /* font-size: 80px; */
     `};
 
-  ${({ state }) =>
+  ${({ isHidden, state }) =>
     state === "entering" &&
+    isHidden &&
     css`
       transform: translateY(5%);
-      opacity: 0;
+      opacity: 1;
       display: block;
     `};
-  ${({ state }) =>
+  ${({ isHidden, state }) =>
     state === "entered" &&
+    !isHidden &&
     css`
       transform: translateY(0);
       opacity: 1;
     `};
-  ${({ state }) =>
+  ${({ isHidden, state }) =>
     state === "exiting" &&
+    isHidden &&
     css`
       transform: translateY(2%);
-      opacity: 0.7;
+      opacity: 0;
     `};
-  ${({ state }) =>
+  ${({ isHidden, state }) =>
     state === "exited" &&
+    isHidden &&
     css`
       transform: translateY(5%);
       opacity: 0;
