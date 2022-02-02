@@ -26,6 +26,7 @@ export const MainWrapper = styled.main`
 
 export const SectionPanel = styled.section`
   position: relative;
+  transform-style: preserve-3d;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
   box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
@@ -33,8 +34,7 @@ export const SectionPanel = styled.section`
   text-align: center;
   align-items: center;
   transition: all ${stylesVariables.animationTime.mainPage}ms
-    ${stylesVariables.easing.inQuad};
-  /* transition: all 0.7s ease; */ //original
+    ${stylesVariables.easing.outCirc};
 
   font-size: 20px;
   flex: 1;

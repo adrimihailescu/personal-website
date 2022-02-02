@@ -32,8 +32,8 @@ const stylesVariables = {
     outCirc: "cubic-bezier(0, 0.55, 0.45, 1)",
   },
   animationTime: {
-    mainPage: 600,
-    menuTitles: 200,
+    mainPage: 650,
+    menuTitles: 600,
   },
 }
 
@@ -45,6 +45,9 @@ export const SectionMenuStyle = styled.div`
   justify-content: center;
   align-items: center;
   transition: all ${stylesVariables.animationTime.menuTitles}ms;
+  transform: translate(0, 0, 0);
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 
   // section vertical when contracts
   ${({ isHidden, state }) =>
@@ -52,8 +55,8 @@ export const SectionMenuStyle = styled.div`
     !isHidden &&
     css`
       transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: translateX(-100%);
-      opacity: 0.5;
+      transform: rotateY(-180deg);
+      opacity: 0.8;
       display: block;
     `};
   ${({ isHidden, state }) =>
@@ -61,7 +64,7 @@ export const SectionMenuStyle = styled.div`
     !isHidden &&
     css`
       transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: translateX(0%);
+      transform: rotate(0deg);
       opacity: 1;
     `};
 
@@ -71,15 +74,15 @@ export const SectionMenuStyle = styled.div`
     isHidden &&
     css`
       transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: translateY(-100%);
-      opacity: 0.5;
+      transform: rotateY(180deg);
+      opacity: 0.8;
     `};
   ${({ isHidden, state }) =>
     state === "entered" &&
     isHidden &&
     css`
       transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: translateY(0%);
+      transform: rotateY(0deg);
       opacity: 0;
       display: none;
     `};
