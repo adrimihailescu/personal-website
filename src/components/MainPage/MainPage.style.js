@@ -3,9 +3,11 @@ import stylesVariables from "../../sharedStyles"
 
 export const MainWrapper = styled.main`
   min-width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* min-height: 100%; */
   overflow: hidden;
   display: flex;
+  font-size: ${stylesVariables.fontSizes.bodyText.laptop};
   *::-webkit-scrollbar {
     width: 10px;
   }
@@ -18,13 +20,27 @@ export const MainWrapper = styled.main`
     border: 3px solid #37338c;
   }
 
+  @media (min-width: 992px) {
+  }
+
   @media (max-width: 700px) {
-    -webkit-flex-direction: column;
     flex-direction: column;
+    font-size: ${stylesVariables.fontSizes.bodyText.tablet};
+  }
+
+  @media (max-width: 500px) {
+    font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   }
 `
 
 export const SectionPanel = styled.section`
+  min-height: 33.3vh;
+  max-height: 100vh;
+
+  @media (min-width: 992px) {
+    min-height: 100vh;
+  }
+
   position: relative;
   transform-style: preserve-3d;
   background-color: #000000;
@@ -36,13 +52,12 @@ export const SectionPanel = styled.section`
   transition: all ${stylesVariables.animationTime.mainPage}ms
     ${stylesVariables.easing.outCirc};
 
-  font-size: 20px;
+  font-size: ${stylesVariables.fontSizes.bodyText.laptop};
   flex: 1;
   justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
   overflow-y: scroll;
   cursor: pointer;
 

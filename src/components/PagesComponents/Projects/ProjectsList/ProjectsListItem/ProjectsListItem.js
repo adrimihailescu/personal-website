@@ -7,13 +7,13 @@ const ProjectsListItem = ({ title, image, tools }) => {
 
   return (
     <Card>
-      <a
+      {/* <a
         href="https://github.com/adrimihailescu?tab=repositories"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        <h5>{title}</h5>
-      </a>
+      > */}
+      <h5>{title}</h5>
+      {/* </a> */}
       <GatsbyImage image={pathToImage} alt={title} />
 
       <p>Tools: {tools.join("|")} </p>

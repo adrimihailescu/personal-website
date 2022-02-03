@@ -10,6 +10,23 @@ const stylesVariables = {
     primary30: "#938dff",
     primary80: "#37338c",
   },
+  fontSizes: {
+    bodyText: {
+      laptop: "23px",
+      tablet: "20px",
+      mobile: "16px",
+    },
+    titleText: {
+      laptop: "60px",
+      tablet: "45px",
+      mobile: "30px",
+    },
+    subtitleText: {
+      laptop: "30px",
+      tablet: "25px",
+      mobile: "20px",
+    },
+  },
   spacing: {
     xs: "20px",
     sm: "20px",
@@ -89,7 +106,7 @@ export const SectionMenuStyle = styled.div`
 `
 
 export const SectionPanelTitle = styled.h1`
-  font-size: 4rem;
+  font-size: ${stylesVariables.fontSizes.titleText.laptop};
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
@@ -97,8 +114,18 @@ export const SectionPanelTitle = styled.h1`
     isTextVertical &&
     css`
       text-orientation: mixed;
-      writing-mode: vertical-rl;
+
+      @media (min-width: 992px) {
+        writing-mode: vertical-rl;
+      }
     `};
+
+  @media (max-width: 700px) {
+    font-size: ${stylesVariables.fontSizes.titleText.tablet};
+  }
+  @media (max-width: 500px) {
+    font-size: ${stylesVariables.fontSizes.titleText.mobile};
+  }
 `
 
 export const SectionContent = styled.div`
@@ -128,12 +155,27 @@ export const SectionContent = styled.div`
     css`
       display: none;
     `};
+
+  @media (max-width: 700px) {
+    font-size: ${stylesVariables.fontSizes.bodyText.tablet};
+  }
+
+  @media (max-width: 500px) {
+    font-size: ${stylesVariables.fontSizes.bodyText.mobile};
+  }
 `
 
 export const SectionPanelSubtitle = styled.h3`
   color: ${stylesVariables.colors.mainText};
-  font-size: 1.8rem;
+  font-size: ${stylesVariables.fontSizes.subtitleText.laptop};
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+
+  @media (max-width: 500px) {
+    font-size: ${stylesVariables.fontSizes.subtitleText.tablet};
+  }
+  @media (max-width: 500px) {
+    font-size: ${stylesVariables.fontSizes.subtitleText.mobile};
+  }
 `
 
 export default stylesVariables
