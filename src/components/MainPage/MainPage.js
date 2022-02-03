@@ -11,11 +11,8 @@ import Contact from "../PagesComponents/Contact"
 import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
 
-import { MainWrapper, SectionPanel } from "./MainPage.style"
-import StylesVariables, {
-  SectionPanelTitle,
-  SectionMenuStyle,
-} from "../../sharedStyles"
+import { MainWrapper, SectionPanel, SectionMenuStyle } from "./MainPage.style"
+import StylesVariables, { SectionPanelTitle } from "../../sharedStyles"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -74,7 +71,7 @@ const MainPage = () => {
                 <SectionPanel
                   key={`key-${sectionPage}`}
                   isActive={isActive}
-                  // state={state}
+                  hideOnMobile={!isActive && activePanel !== undefined}
                   className={`${sectionPage}-section`}
                   onClick={() => handleClick(sectionPage)}
                 >
@@ -83,7 +80,7 @@ const MainPage = () => {
                     timeout={StylesVariables.animationTime.menuTitles}
                   >
                     {titleState => (
-                      <SectionMenuStyle isHidden={isActive} state={titleState}>
+                      <SectionMenuStyle isActive={isActive} state={titleState}>
                         <SectionPanelTitle isTextVertical={true}>
                           {sectionTitle}
                         </SectionPanelTitle>

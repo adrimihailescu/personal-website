@@ -54,57 +54,6 @@ const stylesVariables = {
   },
 }
 
-export const SectionMenuStyle = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all ${stylesVariables.animationTime.menuTitles}ms;
-  transform: translate(0, 0, 0);
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-
-  // section vertical when contracts
-  ${({ isHidden, state }) =>
-    state === "exiting" &&
-    !isHidden &&
-    css`
-      transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: rotateY(-180deg);
-      opacity: 0.8;
-      display: block;
-    `};
-  ${({ isHidden, state }) =>
-    state === "exited" &&
-    !isHidden &&
-    css`
-      transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: rotate(0deg);
-      opacity: 1;
-    `};
-
-  // section vertical when expands
-  ${({ isHidden, state }) =>
-    state === "entering" &&
-    isHidden &&
-    css`
-      transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: rotateY(180deg);
-      opacity: 0.8;
-    `};
-  ${({ isHidden, state }) =>
-    state === "entered" &&
-    isHidden &&
-    css`
-      transition-timing-function: ${stylesVariables.easing.outCirc};
-      transform: rotateY(0deg);
-      opacity: 0;
-      display: none;
-    `};
-`
-
 export const SectionPanelTitle = styled.h1`
   font-size: ${stylesVariables.fontSizes.titleText.laptop};
   color: ${stylesVariables.colors.colorTitle};
@@ -114,10 +63,10 @@ export const SectionPanelTitle = styled.h1`
     isTextVertical &&
     css`
       text-orientation: mixed;
+      writing-mode: vertical-rl;
 
-      @media (min-width: 992px) {
-        writing-mode: vertical-rl;
-      }
+      /* @media (min-width: 992px) {
+      } */
     `};
 
   @media (max-width: 700px) {

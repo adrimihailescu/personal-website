@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <div>{children}</div>
+      {children}
     </>
   )
 }

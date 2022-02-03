@@ -3,8 +3,6 @@ import stylesVariables from "../../sharedStyles"
 
 export const MainWrapper = styled.main`
   min-width: 100%;
-  /* min-height: 100vh; */
-  /* min-height: 100%; */
   overflow: hidden;
   display: flex;
   font-size: ${stylesVariables.fontSizes.bodyText.laptop};
@@ -24,24 +22,66 @@ export const MainWrapper = styled.main`
   }
 
   @media (max-width: 700px) {
-    flex-direction: column;
     font-size: ${stylesVariables.fontSizes.bodyText.tablet};
   }
 
-  @media (max-width: 500px) {
+  @media (min-width: 500px) {
     font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   }
 `
 
+export const SectionMenuStyle = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ${stylesVariables.animationTime.menuTitles}ms;
+  transform: translate(0, 0, 0);
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+
+  // section vertical when contracts
+  ${({ isActive, state }) =>
+    state === "exiting" &&
+    !isActive &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: rotateY(-180deg);
+      opacity: 0.8;
+      display: block;
+    `};
+  ${({ isActive, state }) =>
+    state === "exited" &&
+    !isActive &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: rotate(0deg);
+      opacity: 1;
+    `};
+
+  // section vertical when expands
+  ${({ isActive, state }) =>
+    state === "entering" &&
+    isActive &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: rotateY(180deg);
+      opacity: 0.8;
+    `};
+  ${({ isActive, state }) =>
+    state === "entered" &&
+    isActive &&
+    css`
+      transition-timing-function: ${stylesVariables.easing.outCirc};
+      transform: rotateY(0deg);
+      opacity: 0;
+      display: none;
+    `};
+`
+
 export const SectionPanel = styled.section`
-  min-height: 33.3vh;
   max-height: 100vh;
-
-  @media (min-width: 992px) {
-    min-height: 100vh;
-  }
-
-  position: relative;
   transform-style: preserve-3d;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
@@ -51,35 +91,31 @@ export const SectionPanel = styled.section`
   align-items: center;
   transition: all ${stylesVariables.animationTime.mainPage}ms
     ${stylesVariables.easing.outCirc};
-
   font-size: ${stylesVariables.fontSizes.bodyText.laptop};
   flex: 1;
   justify-content: flex-start;
   align-items: center;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
   cursor: pointer;
+  overflow: hidden;
 
   ${({ isActive }) =>
     isActive &&
     css`
       flex: 10;
       cursor: default;
+      overflow-y: scroll;
     `}
-  /* ${({ state }) =>
-    state === "entering" ||
-    (state === "entered" &&
-      css`
-        flex: 10;
-      `)} */
 
-  /* ${({ state }) =>
-    state === "exiting" ||
-    (state === "exited" &&
-      css`
-        flex: 1;
-      `)} */
+  ${({ hideOnMobile }) =>
+    hideOnMobile &&
+    css`
+      flex: 1;
+      @media (max-width: 700px) {
+        flex: 0;
+      }
+    `}
 
   // applyes to all child items of panel section
    > div {
