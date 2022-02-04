@@ -32,7 +32,7 @@ export const MainWrapper = styled.main`
 
 export const SectionMenuStyle = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,8 +81,11 @@ export const SectionMenuStyle = styled.div`
 `
 
 export const SectionPanel = styled.section`
-  /* max-height: 100vh; */
-  height: calc(100vh - ${stylesVariables.headerHight.bigScreen});
+  --mobile: ${stylesVariables.headerHight.mobile};
+  --tablet: ${stylesVariables.headerHight.tablet};
+  --bigScreen: ${stylesVariables.headerHight.xlScreen};
+
+  height: calc(100vh - var(--mobile));
   transform-style: preserve-3d;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
@@ -100,6 +103,14 @@ export const SectionPanel = styled.section`
   flex-direction: column;
   cursor: pointer;
   overflow: hidden;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    height: calc(100vh - var(--tablet));
+  }
+
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    height: calc(100vh - var(--bigScreen));
+  }
 
   ${({ isActive }) =>
     isActive &&
@@ -125,15 +136,4 @@ export const SectionPanel = styled.section`
     transition: transform 0.5s;
     max-width: 1200px;
   }
-  //main page height
-  /* @media (max-width: ${stylesVariables.media.screen}) {
-    height: calc(100vh - ${stylesVariables.headerHight.mdScreen});
-  }
-
-  @media (max-width: ${stylesVariables.media.tablet}) {
-    height: calc(100vh - ${stylesVariables.headerHight.tablet});
-  }
-  @media (max-width: ${stylesVariables.media.mobile}) {
-    height: calc(100vh - ${stylesVariables.headerHight.mobile});
-  } */
 `
