@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { PageState } from "../../context/State"
+
 import {
   SwitchTransition,
   CSSTransition,
@@ -18,7 +20,7 @@ const sectionPages = ["about", "projects", "contact"]
 
 const MainPage = () => {
   const data = GetWebsiteData()
-  const [activePanel, setActivePanel] = useState(undefined)
+  const [activePanel, setActivePanel] = useContext(PageState)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const handleClick = id => {

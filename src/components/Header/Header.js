@@ -1,15 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
+import { PageState } from "../../context/State"
 import { HeaderWrapper, BackButton } from "./Header.style"
 
-const Header = (handleClick, sectionPage) => {
+const Header = () => {
+  const [activePanel, setActivePanel] = useContext(PageState)
+
   return (
     <HeaderWrapper>
       <h1>Adriana Mihailescu</h1>
-      <BackButton
-      //   onClick={() => handleClick(sectionPage === undefined)}
-      >
-        Go back
-      </BackButton>
+      <BackButton onClick={() => setActivePanel(undefined)}>Go back</BackButton>
     </HeaderWrapper>
   )
 }
