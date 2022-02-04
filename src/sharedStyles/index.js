@@ -26,6 +26,11 @@ const stylesVariables = {
       tablet: "25px",
       mobile: "20px",
     },
+    headerText: {
+      laptop: "60px",
+      tablet: "40px",
+      mobile: "20px",
+    },
   },
   spacing: {
     xs: "20px",
@@ -52,6 +57,18 @@ const stylesVariables = {
     mainPage: 650,
     menuTitles: 600,
   },
+  media: {
+    bigScreen: "1200px",
+    screen: "999px",
+    tablet: "700px",
+    mobile: "500px",
+  },
+  headerHight: {
+    xlScreen: "90px",
+    mdScreen: "70px",
+    tablet: "50px",
+    mobile: "40px",
+  },
 }
 
 export const SectionPanelTitle = styled.h1`
@@ -69,10 +86,10 @@ export const SectionPanelTitle = styled.h1`
       } */
     `};
 
-  @media (max-width: 700px) {
+  @media (max-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.titleText.tablet};
   }
-  @media (max-width: 500px) {
+  @media (max-width: ${stylesVariables.media.mobile}) {
     font-size: ${stylesVariables.fontSizes.titleText.mobile};
   }
 `
@@ -105,11 +122,11 @@ export const SectionContent = styled.div`
       display: none;
     `};
 
-  @media (max-width: 700px) {
+  @media (max-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.bodyText.tablet};
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${stylesVariables.media.mobile}) {
     font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   }
 `
@@ -119,10 +136,10 @@ export const SectionPanelSubtitle = styled.h3`
   font-size: ${stylesVariables.fontSizes.subtitleText.laptop};
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.subtitleText.tablet};
   }
-  @media (max-width: 500px) {
+  @media (max-width: ${stylesVariables.media.mobile}) {
     font-size: ${stylesVariables.fontSizes.subtitleText.mobile};
   }
 `

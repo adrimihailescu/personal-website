@@ -18,14 +18,14 @@ export const MainWrapper = styled.main`
     border: 3px solid #37338c;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: ${stylesVariables.media.screen}) {
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.bodyText.tablet};
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: ${stylesVariables.media.mobile}) {
     font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   }
 `
@@ -81,7 +81,8 @@ export const SectionMenuStyle = styled.div`
 `
 
 export const SectionPanel = styled.section`
-  max-height: 100vh;
+  /* max-height: 100vh; */
+  height: calc(100vh - ${stylesVariables.headerHight.bigScreen});
   transform-style: preserve-3d;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
@@ -112,7 +113,7 @@ export const SectionPanel = styled.section`
     hideOnMobile &&
     css`
       flex: 1;
-      @media (max-width: 700px) {
+      @media (max-width: ${stylesVariables.media.tablet}) {
         flex: 0;
       }
     `}
@@ -124,4 +125,15 @@ export const SectionPanel = styled.section`
     transition: transform 0.5s;
     max-width: 1200px;
   }
+  //main page height
+  /* @media (max-width: ${stylesVariables.media.screen}) {
+    height: calc(100vh - ${stylesVariables.headerHight.mdScreen});
+  }
+
+  @media (max-width: ${stylesVariables.media.tablet}) {
+    height: calc(100vh - ${stylesVariables.headerHight.tablet});
+  }
+  @media (max-width: ${stylesVariables.media.mobile}) {
+    height: calc(100vh - ${stylesVariables.headerHight.mobile});
+  } */
 `
