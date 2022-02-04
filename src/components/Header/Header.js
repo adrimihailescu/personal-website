@@ -1,14 +1,22 @@
 import React, { useContext } from "react"
 import { PageState } from "../../context/State"
-import { HeaderWrapper, BackButton } from "./Header.style"
+import { HeaderWrapper, BackButton, BackLink } from "./Header.style"
 
-const Header = () => {
+const Header = ({ location }) => {
   const [activePanel, setActivePanel] = useContext(PageState)
+  const url = typeof window !== "undefined" ? window.location.pathname : ""
+
+  const button =
+    url === "/" ? (
+      <BackButton onClick={() => setActivePanel(undefined)}>Go back</BackButton>
+    ) : (
+      <BackLink to="/">Go back</BackLink>
+    )
 
   return (
     <HeaderWrapper>
       <h1>Adriana Mihailescu</h1>
-      <BackButton onClick={() => setActivePanel(undefined)}>Go back</BackButton>
+      {activePanel !== undefined && button}
     </HeaderWrapper>
   )
 }
