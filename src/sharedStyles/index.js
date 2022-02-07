@@ -11,25 +11,35 @@ const stylesVariables = {
     primary80: "#37338c",
   },
   fontSizes: {
+    logoText: {
+      laptop: "60px",
+      tablet: "40px",
+      mobile: "20px",
+    },
     bodyText: {
       laptop: "23px",
       tablet: "20px",
       mobile: "16px",
     },
-    titleText: {
+    heading1: {
       laptop: "60px",
       tablet: "45px",
       mobile: "30px",
     },
-    subtitleText: {
+    heading2: {
       laptop: "30px",
       tablet: "25px",
       mobile: "20px",
     },
-    headerText: {
-      laptop: "60px",
-      tablet: "40px",
-      mobile: "20px",
+    heading3: {
+      laptop: "26px",
+      tablet: "22px",
+      mobile: "18px",
+    },
+    heading4: {
+      laptop: "23px",
+      tablet: "20px",
+      mobile: "16px",
     },
   },
   spacing: {
@@ -57,6 +67,8 @@ const stylesVariables = {
     mainPage: 650,
     menuTitles: 600,
   },
+
+  // media breakpoints
   media: {
     bigScreen: "1200px",
     screen: "999px",
@@ -64,39 +76,41 @@ const stylesVariables = {
     mobile: "500px",
   },
   headerHight: {
-    xlScreen: "90px",
-    mdScreen: "70px",
+    bigScreen: "90px",
+    screen: "70px",
     tablet: "50px",
     mobile: "40px",
   },
 }
 
 export const SectionPanelTitle = styled.h1`
-  font-size: ${stylesVariables.fontSizes.titleText.laptop};
+  font-size: ${stylesVariables.fontSizes.heading1.mobile};
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+
   ${({ isTextVertical }) =>
     isTextVertical &&
     css`
       text-orientation: mixed;
       writing-mode: vertical-rl;
-
-      /* @media (min-width: 992px) {
-      } */
     `};
 
-  @media (max-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.titleText.tablet};
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    font-size: ${stylesVariables.fontSizes.heading1.tablet};
   }
-  @media (max-width: ${stylesVariables.media.mobile}) {
-    font-size: ${stylesVariables.fontSizes.titleText.mobile};
+  @media (min-width: ${stylesVariables.media.screen}) {
+    font-size: ${stylesVariables.fontSizes.heading1.tablet};
+  }
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    font-size: ${stylesVariables.fontSizes.heading1.laptop};
   }
 `
 
 export const SectionContent = styled.div`
   transition: all 0.5s ease;
-
+  padding: 10px;
+  font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   ${({ state }) =>
     state === "entering" &&
     css`
@@ -121,26 +135,31 @@ export const SectionContent = styled.div`
     css`
       display: none;
     `};
-
-  @media (max-width: ${stylesVariables.media.tablet}) {
+  /* 
+  @media (min-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.bodyText.tablet};
   }
-
-  @media (max-width: ${stylesVariables.media.mobile}) {
-    font-size: ${stylesVariables.fontSizes.bodyText.mobile};
+  @media (min-width: ${stylesVariables.media.screen}) {
+    font-size: ${stylesVariables.fontSizes.bodyText.tablet};
   }
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    font-size: ${stylesVariables.fontSizes.bodyText.laptop};
+  } */
 `
 
-export const SectionPanelSubtitle = styled.h3`
+export const SectionPanelSubtitle = styled.h2`
   color: ${stylesVariables.colors.mainText};
-  font-size: ${stylesVariables.fontSizes.subtitleText.laptop};
+  font-size: ${stylesVariables.fontSizes.heading2.mobile};
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 
-  @media (max-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.subtitleText.tablet};
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    font-size: ${stylesVariables.fontSizes.heading2.tablet};
   }
-  @media (max-width: ${stylesVariables.media.mobile}) {
-    font-size: ${stylesVariables.fontSizes.subtitleText.mobile};
+  @media (min-width: ${stylesVariables.media.screen}) {
+    font-size: ${stylesVariables.fontSizes.heading2.tablet};
+  }
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    font-size: ${stylesVariables.fontSizes.heading2.laptop};
   }
 `
 

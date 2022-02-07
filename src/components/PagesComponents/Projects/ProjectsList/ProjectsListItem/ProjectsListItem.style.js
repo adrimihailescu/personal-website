@@ -8,14 +8,13 @@ export const Card = styled.li`
   background-color: ${stylesVariables.colors.grey};
   width: 80%;
   border-radius: 40px;
-  h5 {
+  h4 {
     color: ${stylesVariables.colors.primary30};
     font-size: ${stylesVariables.fontSizes.bodyText.tablet};
     font-style: italic;
   }
 
   img {
-    border-radius: 30px;
     width: 100%;
     height: 100%;
   }

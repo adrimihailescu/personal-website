@@ -7,7 +7,7 @@ const ProjectsListItem = ({ title, image, tools }) => {
 
   return (
     <Card>
-      <h5>{title}</h5>
+      <h4>{title}</h4>
 
       <GatsbyImage image={pathToImage} alt={title} />
 

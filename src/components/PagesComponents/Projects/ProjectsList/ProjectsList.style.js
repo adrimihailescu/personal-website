@@ -7,7 +7,6 @@ export const Cards = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10px;
+  padding: 10px;
   list-style: none;
-  padding: 0;
 `

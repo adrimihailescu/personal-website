@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --headingFont: "Inconsolata", monospace;
     --bodyFont: "Montserrat", sans-serif;
-    --borderRadius: 5px;
+   
   }
 
   body {
@@ -63,6 +63,92 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 20px;
+  }
+
+  p {
+    margin-bottom: 14px;
+    font-size: ${stylesVariables.fontSizes.bodyText.mobile};
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: ${stylesVariables.fontSizes.heading1.mobile};
+  }
+
+  h2, h3 {
+    margin-bottom: 20px;
+    font-size: ${stylesVariables.fontSizes.heading2.mobile};
+  }
+  
+  h4 {
+    margin-bottom: 10px;
+    font-size: ${stylesVariables.fontSizes.heading4.mobile};
+  }
+  
+  // tablet
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    p {
+      margin-bottom: 20px;
+      font-size: ${stylesVariables.fontSizes.bodyText.tablet};
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: ${stylesVariables.fontSizes.heading1.tablet};
+    }
+
+    h2, h3 {
+      margin-bottom: 30px;
+      font-size: ${stylesVariables.fontSizes.heading2.tablet};
+    }
+
+    h4 {
+    margin-bottom: 20px;
+    }
+  }
+
+  //tablet
+  @media (min-width: ${stylesVariables.media.screen}) {
+    p {
+      margin-bottom: 20px;
+      font-size: ${stylesVariables.fontSizes.bodyText.tablet};
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: ${stylesVariables.fontSizes.heading1.tablet};
+    }
+
+    h2, h3 {
+      margin-bottom: 30px;
+      font-size: ${stylesVariables.fontSizes.heading2.tablet};
+    }
+
+    h4 {
+    margin-bottom: 20px;
+    }
+  }
+
+  //big screens
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    p {
+      margin-bottom: 25px;
+      font-size: ${stylesVariables.fontSizes.bodyText.laptop};
+    }
+
+    h1 {
+      margin-bottom: 50px;
+      font-size: ${stylesVariables.fontSizes.heading1.laptop};
+    }
+
+    h2, h3 {
+      margin-bottom: 40px;
+      font-size: ${stylesVariables.fontSizes.heading2.laptop};
+    }
+
+    h4 {
+    margin-bottom: 30px;
+    }
   }
 
   *::-webkit-scrollbar {

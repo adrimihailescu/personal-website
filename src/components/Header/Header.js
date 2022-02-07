@@ -16,6 +16,7 @@ const Header = ({ location }) => {
   return (
     <HeaderWrapper>
       <h1>Adriana Mihailescu</h1>
+
       {activePanel !== undefined && button}
     </HeaderWrapper>
   )

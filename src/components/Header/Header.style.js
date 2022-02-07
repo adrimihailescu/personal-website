@@ -15,28 +15,30 @@ export const HeaderWrapper = styled.header`
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 
   @media (min-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.titleText.tablet};
+    font-size: ${stylesVariables.fontSizes.heading1.tablet};
     height: ${stylesVariables.headerHight.tablet};
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
-    font-size: ${stylesVariables.fontSizes.titleText.tablet};
-    height: ${stylesVariables.headerHight.tablet};
+    font-size: ${stylesVariables.fontSizes.heading1.tablet};
+    height: ${stylesVariables.headerHight.screen};
     justify-content: center;
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
-    font-size: ${stylesVariables.fontSizes.titleText.laptop};
-    height: ${stylesVariables.headerHight.xlScreen};
+    font-size: ${stylesVariables.fontSizes.heading1.laptop};
+    height: ${stylesVariables.headerHight.bigScreen};
   }
 
   h1 {
     color: ${stylesVariables.colors.colorTitle};
-    font-size: ${stylesVariables.fontSizes.headerText.mobile};
+    font-size: ${stylesVariables.fontSizes.logoText.mobile};
+    margin-bottom: 0;
     margin-left: 10px;
+    text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 
     @media (min-width: ${stylesVariables.media.tablet}) {
-      font-size: ${stylesVariables.fontSizes.headerText.tablet};
+      font-size: ${stylesVariables.fontSizes.logoText.tablet};
     }
 
     @media (min-width: ${stylesVariables.media.screen}) {
@@ -44,7 +46,7 @@ export const HeaderWrapper = styled.header`
     }
 
     @media (min-width: ${stylesVariables.media.bigScreen}) {
-      font-size: ${stylesVariables.fontSizes.headerText.laptop};
+      font-size: ${stylesVariables.fontSizes.logoText.laptop};
     }
   }
 `

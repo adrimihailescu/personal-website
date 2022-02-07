@@ -83,7 +83,7 @@ export const SectionMenuStyle = styled.div`
 export const SectionPanel = styled.section`
   --mobile: ${stylesVariables.headerHight.mobile};
   --tablet: ${stylesVariables.headerHight.tablet};
-  --bigScreen: ${stylesVariables.headerHight.xlScreen};
+  --bigScreen: ${stylesVariables.headerHight.bigScreen};
 
   height: calc(100vh - var(--mobile));
   transform-style: preserve-3d;
@@ -129,11 +129,19 @@ export const SectionPanel = styled.section`
       }
     `}
 
-  // applyes to all child items of panel section
-   > div {
-    margin: 0;
+  // applyes to second child item of panel section (content area)
+   > div:nth-child(2) {
     width: 100%;
     transition: transform 0.5s;
     max-width: 1200px;
+    margin-top: 40px;
+
+    @media (min-width: ${stylesVariables.media.tablet}) {
+      margin-top: 90px;
+    }
+
+    @media (min-width: ${stylesVariables.media.bigScreen}) {
+      margin-top: 100px;
+    }
   }
 `
