@@ -84,7 +84,7 @@ const stylesVariables = {
 }
 
 export const SectionPanelTitle = styled.h1`
-  font-size: ${stylesVariables.fontSizes.heading1.mobile};
+  /* font-size: ${stylesVariables.fontSizes.heading1.mobile}; */
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
@@ -95,16 +95,6 @@ export const SectionPanelTitle = styled.h1`
       text-orientation: mixed;
       writing-mode: vertical-rl;
     `};
-
-  @media (min-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.heading1.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.screen}) {
-    font-size: ${stylesVariables.fontSizes.heading1.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.bigScreen}) {
-    font-size: ${stylesVariables.fontSizes.heading1.laptop};
-  }
 `
 
 export const SectionContent = styled.div`
@@ -149,18 +139,8 @@ export const SectionContent = styled.div`
 
 export const SectionPanelSubtitle = styled.h2`
   color: ${stylesVariables.colors.mainText};
-  font-size: ${stylesVariables.fontSizes.heading2.mobile};
+  /* font-size: ${stylesVariables.fontSizes.heading2.mobile}; */
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
-
-  @media (min-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.heading2.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.screen}) {
-    font-size: ${stylesVariables.fontSizes.heading2.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.bigScreen}) {
-    font-size: ${stylesVariables.fontSizes.heading2.laptop};
-  }
 `
 
 export default stylesVariables
