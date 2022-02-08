@@ -41,6 +41,11 @@ const stylesVariables = {
       tablet: "20px",
       mobile: "16px",
     },
+    aTags: {
+      laptop: "20px",
+      tablet: "16px",
+      mobile: "12px",
+    },
   },
   spacing: {
     xs: "20px",
@@ -84,7 +89,6 @@ const stylesVariables = {
 }
 
 export const SectionPanelTitle = styled.h1`
-  /* font-size: ${stylesVariables.fontSizes.heading1.mobile}; */
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
@@ -125,21 +129,10 @@ export const SectionContent = styled.div`
     css`
       display: none;
     `};
-  /* 
-  @media (min-width: ${stylesVariables.media.tablet}) {
-    font-size: ${stylesVariables.fontSizes.bodyText.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.screen}) {
-    font-size: ${stylesVariables.fontSizes.bodyText.tablet};
-  }
-  @media (min-width: ${stylesVariables.media.bigScreen}) {
-    font-size: ${stylesVariables.fontSizes.bodyText.laptop};
-  } */
 `
 
 export const SectionPanelSubtitle = styled.h2`
   color: ${stylesVariables.colors.mainText};
-  /* font-size: ${stylesVariables.fontSizes.heading2.mobile}; */
   text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 `
 

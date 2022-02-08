@@ -10,7 +10,7 @@ const ProjectsList = ({ projects = [] }) => {
           id,
           title,
           image,
-          content: { tools },
+          content: { tools, links },
         } = project
 
         return (
@@ -19,6 +19,7 @@ const ProjectsList = ({ projects = [] }) => {
             title={title}
             image={image}
             tools={tools}
+            links={links}
           />
         )
       })}

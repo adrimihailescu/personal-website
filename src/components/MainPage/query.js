@@ -58,8 +58,11 @@ const GetWebsiteData = () => {
               }
               title
               content {
-                description
                 tools
+                links {
+                  Github
+                  Live
+                }
               }
             }
           }

@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    text-decoration: none;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 
@@ -78,11 +79,17 @@ const GlobalStyle = createGlobalStyle`
   h2, h3 {
     margin-bottom: 20px;
     font-size: ${stylesVariables.fontSizes.heading2.mobile};
+    color: ${stylesVariables.colors.mainText};
+    margin-top: 20px;
   }
   
   h4 {
     margin-bottom: 10px;
     font-size: ${stylesVariables.fontSizes.heading4.mobile};
+  }
+
+  a {
+    font-size: ${stylesVariables.fontSizes.aTags.mobile};
   }
   
   // tablet
@@ -100,10 +107,15 @@ const GlobalStyle = createGlobalStyle`
     h2, h3 {
       margin-bottom: 30px;
       font-size: ${stylesVariables.fontSizes.heading2.tablet};
+      margin-top: 30px;
     }
 
     h4 {
     margin-bottom: 20px;
+    }
+
+    a {
+    font-size: ${stylesVariables.fontSizes.aTags.tablet};
     }
   }
 
@@ -122,10 +134,15 @@ const GlobalStyle = createGlobalStyle`
     h2, h3 {
       margin-bottom: 30px;
       font-size: ${stylesVariables.fontSizes.heading2.tablet};
+      margin-top: 30px;
     }
 
     h4 {
     margin-bottom: 20px;
+    }
+
+    a {
+    font-size: ${stylesVariables.fontSizes.aTags.tablet};
     }
   }
 
@@ -144,12 +161,20 @@ const GlobalStyle = createGlobalStyle`
     h2, h3 {
       margin-bottom: 40px;
       font-size: ${stylesVariables.fontSizes.heading2.laptop};
+      margin-top: 40px;
     }
 
     h4 {
     margin-bottom: 30px;
     }
+
+    a {
+    font-size: ${stylesVariables.fontSizes.aTags.laptop};
+    }
   }
+
+  
+
 
   *::-webkit-scrollbar {
       width: 10px;
