@@ -7,10 +7,20 @@ export const Card = styled.li`
   background-color: ${stylesVariables.colors.grey};
   width: 80%;
   border-radius: 40px;
+  transition: transform 200ms ${stylesVariables.easing.inSine};
+
+  &:hover {
+    transition: transform 200ms ${stylesVariables.easing.inOutSine};
+    transform: scale(1.02);
+  }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
   }
   p {
     color: ${stylesVariables.colors.mainText};

@@ -10,20 +10,25 @@ const ProjectsListItem = ({ title, image, tools, links: { Github, Live } }) => {
       <h3>{title}</h3>
 
       <GatsbyImage image={pathToImage} alt={title} />
-
       <p>Tools: {tools.join("|")} </p>
-      <ul>
-        <li>
-          <a href={Github} target="_blank" rel="noreferrer">
-            Github
-          </a>
-        </li>
-        <li>
-          <a href={Live} target="_blank" rel="noreferrer">
-            Live
-          </a>
-        </li>
-      </ul>
+      {(Github || Live) && (
+        <ul>
+          {Github && (
+            <li>
+              <a href={Github} target="_blank" rel="noreferrer">
+                Github repo
+              </a>
+            </li>
+          )}
+          {Live && (
+            <li>
+              <a href={Live} target="_blank" rel="noreferrer">
+                View Live
+              </a>
+            </li>
+          )}
+        </ul>
+      )}
     </Card>
   )
 }

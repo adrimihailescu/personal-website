@@ -17,7 +17,7 @@ const Header = ({ location }) => {
     <HeaderWrapper>
       <h1>Adriana Mihailescu</h1>
 
-      {activePanel !== undefined && button}
+      {(activePanel !== undefined || url !== "/") && button}
     </HeaderWrapper>
   )
 }
