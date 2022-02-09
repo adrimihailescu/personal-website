@@ -4,8 +4,10 @@ const stylesVariables = {
   colors: {
     grey: "#474747",
     greyDark: "#333538",
+    greyDarkSlate: "#2f4f4f",
     colorTitle: "#ADA7FF", //color used for titles
     mainText: "#c1beff",
+    primary0: "#f0efff",
     mainColor: "#645cff", // color used for text
     primary30: "#938dff",
     primary80: "#37338c",

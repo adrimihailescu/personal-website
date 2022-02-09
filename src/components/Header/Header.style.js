@@ -65,12 +65,28 @@ export const BackButton = styled.button`
   transition: background-color 300ms ease-in;
   cursor: pointer;
 
+  &:before {
+    z-index: 0;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px -2px lime;
+    transition: opacity 200ms ${stylesVariables.easing.inSine};
+    opacity: 0;
+  }
+
   &:hover {
-    transition: background-color 300ms ease-out;
-    background-color: ${stylesVariables.colors.primary30};
-    color: ${stylesVariables.colors.mainText};
-    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
-      0 5px 3px -3px ${stylesVariables.colors.mainColor};
+    color: ${stylesVariables.colors.greyDarkSlate};
+
+    &:before {
+      transition: opacity 300ms ${stylesVariables.easing.inOutSine};
+      opacity: 1;
+    }
   }
 
   @media (min-width: ${stylesVariables.media.tablet}) {
