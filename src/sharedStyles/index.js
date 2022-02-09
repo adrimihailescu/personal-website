@@ -75,7 +75,7 @@ const stylesVariables = {
 
   // media breakpoints
   media: {
-    bigScreen: "1200px",
+    bigScreen: "1250px",
     screen: "999px",
     tablet: "700px",
     mobile: "500px",

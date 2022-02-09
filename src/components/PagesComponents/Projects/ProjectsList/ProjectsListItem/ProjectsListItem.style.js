@@ -5,7 +5,6 @@ export const Card = styled.li`
   list-style: none;
   margin: 20px;
   background-color: ${stylesVariables.colors.grey};
-  width: 80%;
   border-radius: 40px;
   transition: transform 200ms ${stylesVariables.easing.inSine};
 
@@ -15,17 +14,49 @@ export const Card = styled.li`
   }
 
   img {
-    width: 60%;
+    width: 100%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 10px;
+
+    @media (min-width: ${stylesVariables.media.tablet}) {
+      border-radius: 10px;
+      width: 90%;
+    }
+
+    @media (min-width: ${stylesVariables.media.screen}) {
+      border-radius: 30px;
+      width: 90%;
+    }
+
+    @media (min-width: ${stylesVariables.media.bigScreen}) {
+      border-radius: 40px;
+      width: 80%;
+    }
   }
-  p {
-    color: ${stylesVariables.colors.mainText};
-    margin-top: 14px;
+
+  .tools {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media (min-width: ${stylesVariables.media.tablet}) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: ${stylesVariables.media.screen}) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: ${stylesVariables.media.bigScreen}) {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
   }
+
   ul {
     display: flex;
     justify-content: space-around;

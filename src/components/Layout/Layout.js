@@ -88,9 +88,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${stylesVariables.fontSizes.heading4.mobile};
   }
 
-  a {
+  a , span{
     font-size: ${stylesVariables.fontSizes.aTags.mobile};
+    color: ${stylesVariables.colors.mainText};
   }
+
+  
+
+  /* span {
+    font-size:
+  } */
   
   // tablet
   @media (min-width: ${stylesVariables.media.tablet}) {
@@ -114,7 +121,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
     }
 
-    a {
+    a, span {
     font-size: ${stylesVariables.fontSizes.aTags.tablet};
     }
   }
@@ -141,7 +148,7 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
     }
 
-    a {
+    a, span {
     font-size: ${stylesVariables.fontSizes.aTags.tablet};
     }
   }
@@ -168,10 +175,12 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 30px;
     }
 
-    a {
+    a, span {
     font-size: ${stylesVariables.fontSizes.aTags.laptop};
     }
   }
+
+  
 
   
 

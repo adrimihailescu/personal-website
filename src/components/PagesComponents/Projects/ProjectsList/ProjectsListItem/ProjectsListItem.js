@@ -10,7 +10,7 @@ const ProjectsListItem = ({ title, image, tools, links: { Github, Live } }) => {
       <h3>{title}</h3>
 
       <GatsbyImage image={pathToImage} alt={title} />
-      <p>Tools: {tools.join("|")} </p>
+      <span className="tools"> {tools.join("|")} </span>
       {(Github || Live) && (
         <ul>
           {Github && (
