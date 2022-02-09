@@ -7,25 +7,28 @@ export const Card = styled.li`
   margin: 20px;
   background-color: ${stylesVariables.colors.grey};
   border-radius: 40px;
-  transition: transform 200ms ${stylesVariables.easing.inSine};
   /* box-shadow: 0 0 0 6px ${stylesVariables.colors.primary30}; */
 
-  /* @:before {
-    content: "";
-    /* width: 10px;
-    height: 10px;
-    margin: 0;
-    top: 0; */
-  /* position: absolute;
-    box-shadow: 0 0 0 5px ${stylesVariables.colors.primary30};
-    border-radius: 40px;
+  &:before {
     z-index: -1;
-  } */
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainColor};
+    transition: opacity 200ms ${stylesVariables.easing.inSine};
+    opacity: 0;
+  }
+
   &:hover {
-    transition: transform 200ms ${stylesVariables.easing.inOutSine};
-    transform: scale(1.02);
-    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
-      0 5px 3px -3px ${stylesVariables.colors.mainColor};
+    &:before {
+      transition: opacity 300ms ${stylesVariables.easing.inOutSine};
+      opacity: 1;
+    }
   }
 
   img {

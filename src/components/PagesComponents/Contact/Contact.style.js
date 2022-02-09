@@ -30,7 +30,6 @@ export const InputPanelContact = styled.input`
   padding: 10px;
   width: 100%;
   margin: 0 auto;
-  /* overflow: hidden; */
 `
 
 export const TextareaPanelContact = styled.textarea`

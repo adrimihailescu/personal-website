@@ -6,5 +6,9 @@ export const Cards = styled.ul`
   padding: 10px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, 1fr);
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
 `
