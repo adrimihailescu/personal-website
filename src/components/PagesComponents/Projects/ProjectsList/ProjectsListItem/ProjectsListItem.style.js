@@ -3,14 +3,29 @@ import stylesVariables from "../../../../../sharedStyles"
 
 export const Card = styled.li`
   list-style: none;
+  position: relative;
   margin: 20px;
   background-color: ${stylesVariables.colors.grey};
   border-radius: 40px;
   transition: transform 200ms ${stylesVariables.easing.inSine};
+  /* box-shadow: 0 0 0 6px ${stylesVariables.colors.primary30}; */
 
+  /* @:before {
+    content: "";
+    /* width: 10px;
+    height: 10px;
+    margin: 0;
+    top: 0; */
+  /* position: absolute;
+    box-shadow: 0 0 0 5px ${stylesVariables.colors.primary30};
+    border-radius: 40px;
+    z-index: -1;
+  } */
   &:hover {
     transition: transform 200ms ${stylesVariables.easing.inOutSine};
     transform: scale(1.02);
+    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
+      0 5px 3px -3px ${stylesVariables.colors.mainColor};
   }
 
   img {
@@ -71,6 +86,14 @@ export const Card = styled.li`
       border: none;
       border-radius: 30px;
       max-width: 80px;
+
+      &:hover {
+        transition: background-color 300ms ease-out;
+        background-color: ${stylesVariables.colors.primary30};
+        color: ${stylesVariables.colors.mainText};
+        box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
+          0 5px 3px -3px ${stylesVariables.colors.mainColor};
+      }
     }
   }
 `

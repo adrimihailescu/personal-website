@@ -67,7 +67,10 @@ export const BackButton = styled.button`
 
   &:hover {
     transition: background-color 300ms ease-out;
-    background-color: cyan;
+    background-color: ${stylesVariables.colors.primary30};
+    color: ${stylesVariables.colors.mainText};
+    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
+      0 5px 3px -3px ${stylesVariables.colors.mainColor};
   }
 
   @media (min-width: ${stylesVariables.media.tablet}) {

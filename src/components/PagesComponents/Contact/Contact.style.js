@@ -48,10 +48,18 @@ export const ButtonPanelContact = styled.button`
   margin-top: 10px;
   margin: 0 0.1em 0.1em 0;
   border: none;
-  border-radius: 2em;
+  border-radius: 30px;
   box-sizing: border-box;
   text-decoration: none;
   background-color: ${stylesVariables.colors.mainText};
   align-self: center;
   color: ${stylesVariables.colors.primary80};
+
+  &:hover {
+    transition: background-color 300ms ease-out;
+    background-color: ${stylesVariables.colors.primary30};
+    color: ${stylesVariables.colors.mainText};
+    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
+      0 5px 3px -3px ${stylesVariables.colors.mainColor};
+  }
 `
