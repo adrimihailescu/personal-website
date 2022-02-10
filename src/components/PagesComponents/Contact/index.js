@@ -7,11 +7,11 @@ import {
   SectionContent,
 } from "../../../sharedStyles"
 import {
-  FormPanelContact,
+  Form,
   ParagraphPanelContact,
-  LabelPanelContact,
-  InputPanelContact,
-  TextareaPanelContact,
+  Label,
+  Input,
+  Textarea,
   ButtonPanelContact,
 } from "./Contact.style"
 
@@ -78,8 +78,8 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
         <SectionContent state={state}>
           <SectionPanelTitle isTextVertical={false}>{title}</SectionPanelTitle>
           <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-          <ParagraphPanelContact>{description}</ParagraphPanelContact>
-          <FormPanelContact onSubmit={handleSubmit}>
+          <h4>{description}</h4>
+          <Form onSubmit={handleSubmit}>
             {formFieldGroups.map(field => {
               const fields = field.fields[0]
               const isRequired = fields.required
@@ -89,12 +89,12 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
               switch (fields.fieldType) {
                 case "textarea":
                   return (
-                    <LabelPanelContact key={`form-${fields.name}`}>
+                    <Label key={`form-${fields.name}`}>
                       <span>
                         {fields.label}
                         {isRequired ? "*" : null}
                       </span>
-                      <TextareaPanelContact
+                      <Textarea
                         type={fields.fieldType}
                         required
                         name={fields.name}
@@ -103,17 +103,17 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                         value={formData[fields.name] || ""}
                         placeholder={fields.placeholder}
                       />
-                    </LabelPanelContact>
+                    </Label>
                   )
 
                 default:
                   return (
-                    <LabelPanelContact key={`form-${fields.name}`}>
+                    <Label key={`form-${fields.name}`}>
                       <span>
                         {fields.label}
                         {isRequired ? "*" : null}
                       </span>
-                      <InputPanelContact
+                      <Input
                         type={fields.fieldType}
                         required
                         name={fields.name}
@@ -122,14 +122,14 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                         value={formData[fields.name] || ""}
                         placeholder={fields.placeholder}
                       />
-                    </LabelPanelContact>
+                    </Label>
                   )
               }
             })}
             <ButtonPanelContact type="submit">
               {formSubmitText}
             </ButtonPanelContact>
-          </FormPanelContact>
+          </Form>
           {formsSubmitStatus.success ? (
             <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
           ) : null}

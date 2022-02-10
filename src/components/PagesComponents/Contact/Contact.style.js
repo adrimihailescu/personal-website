@@ -1,29 +1,55 @@
 import styled, { css } from "styled-components"
 import stylesVariables from "../../../sharedStyles"
 
-export const FormPanelContact = styled.form`
-  /* width: 600px; */
+export const Form = styled.form`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   color: ${stylesVariables.colors.mainText};
-  margin: 40px;
+  margin: 0 auto;
   padding: 10px;
-  /* background-color: #923cb5;
-  background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%); */
+  max-width: 350px;
+  border: none;
+  position: relative;
+
+  &:before {
+    z-index: -1;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainColor};
+    transition: opacity 200ms ${stylesVariables.easing.inSine};
+    opacity: 0;
+  }
+
+  &:hover {
+    &:before {
+      transition: opacity 300ms ${stylesVariables.easing.inOutSine};
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    max-width: 550px;
+  }
+
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    max-width: 600px;
+  }
 `
 
-export const ParagraphPanelContact = styled.p`
-  color: ${stylesVariables.colors.mainText};
-`
-
-export const LabelPanelContact = styled.label`
+export const Label = styled.label`
   display: block;
   margin: 10px;
   margin-bottom: 10px;
 `
 
-export const InputPanelContact = styled.input`
+export const Input = styled.input`
   border-radius: 10px;
   border: none;
   display: block;
@@ -32,7 +58,7 @@ export const InputPanelContact = styled.input`
   margin: 0 auto;
 `
 
-export const TextareaPanelContact = styled.textarea`
+export const Textarea = styled.textarea`
   border-radius: 10px;
   border: none;
   display: block;
@@ -53,12 +79,29 @@ export const ButtonPanelContact = styled.button`
   background-color: ${stylesVariables.colors.mainText};
   align-self: center;
   color: ${stylesVariables.colors.primary80};
+  position: relative;
+
+  &:before {
+    z-index: 0;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px -2px lime;
+    transition: opacity 200ms ${stylesVariables.easing.inSine};
+    opacity: 0;
+  }
 
   &:hover {
-    transition: background-color 300ms ease-out;
-    background-color: ${stylesVariables.colors.primary30};
-    color: ${stylesVariables.colors.mainText};
-    box-shadow: 0 -5px 3px -3px ${stylesVariables.colors.mainColor},
-      0 5px 3px -3px ${stylesVariables.colors.mainColor};
+    color: ${stylesVariables.colors.greyDarkSlate};
+
+    &:before {
+      transition: opacity 300ms ${stylesVariables.easing.inOutSine};
+      opacity: 1;
+    }
   }
 `

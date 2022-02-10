@@ -69,6 +69,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin-bottom: 14px;
     font-size: ${stylesVariables.fontSizes.bodyText.mobile};
+
   }
 
   h1 {
@@ -86,6 +87,8 @@ const GlobalStyle = createGlobalStyle`
   h4 {
     margin-bottom: 10px;
     font-size: ${stylesVariables.fontSizes.heading4.mobile};
+    color: ${stylesVariables.colors.mainText};
+    padding: 10px;
   }
 
   a , span{
@@ -119,6 +122,7 @@ const GlobalStyle = createGlobalStyle`
 
     h4 {
     margin-bottom: 20px;
+    font-size: ${stylesVariables.fontSizes.heading4.tablet};
     }
 
     a, span {
@@ -146,6 +150,7 @@ const GlobalStyle = createGlobalStyle`
 
     h4 {
     margin-bottom: 20px;
+    font-size: ${stylesVariables.fontSizes.heading4.tablet};
     }
 
     a, span {
@@ -173,6 +178,7 @@ const GlobalStyle = createGlobalStyle`
 
     h4 {
     margin-bottom: 30px;
+    font-size: ${stylesVariables.fontSizes.heading4.laptop};
     }
 
     a, span {
