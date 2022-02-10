@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components"
-import { Link } from "gatsby"
+import styled from "styled-components"
 import stylesVariables from "../../sharedStyles"
 
 export const HeaderWrapper = styled.header`
@@ -87,42 +86,6 @@ export const BackButton = styled.button`
       transition: opacity 300ms ${stylesVariables.easing.inOutSine};
       opacity: 1;
     }
-  }
-
-  @media (min-width: ${stylesVariables.media.tablet}) {
-    max-width: 80px;
-    font-size: 16px;
-    padding: 3px 6px 4px;
-    right: 30px;
-  }
-
-  @media (min-width: ${stylesVariables.media.bigScreen}) {
-    max-width: 100px;
-    font-size: 20px;
-    padding: 4px 8px 5px;
-    right: 40px;
-  }
-`
-
-export const BackLink = styled(Link)`
-  color: ${stylesVariables.colors.primary80};
-  font-size: 10px;
-  background-color: ${stylesVariables.colors.mainText};
-  border: none;
-  border-radius: 30px;
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translate(0, -50%);
-  max-width: 60px;
-  padding: 3px 6px 4px;
-  transition: background-color 300ms ease-in;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover {
-    transition: background-color 300ms ease-out;
-    background-color: cyan;
   }
 
   @media (min-width: ${stylesVariables.media.tablet}) {

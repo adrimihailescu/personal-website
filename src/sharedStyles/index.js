@@ -10,7 +10,9 @@ const stylesVariables = {
     primary0: "#f0efff",
     mainColor: "#645cff", // color used for text
     primary30: "#938dff",
+    primary50: "#8400ff",
     primary80: "#37338c",
+    special: "#ff005a",
   },
   fontSizes: {
     logoText: {

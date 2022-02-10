@@ -17,8 +17,6 @@ import {
 const Contact = ({ isTextVertical, animateIn, data }) => {
   const { title, subtitle, description } = data.page
   const {
-    portalId,
-    name: formName,
     submitText: formSubmitText,
     formFieldGroups,
     inlineMessage: formSubmitSuccess,
@@ -83,7 +81,7 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
               const fields = field.fields[0]
               const isRequired = fields.required
 
-              if (!fields.enabled) return
+              if (!fields.enabled) return null
 
               switch (fields.fieldType) {
                 case "textarea":
@@ -95,7 +93,6 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                       </span>
                       <Textarea
                         type={fields.fieldType}
-                        required
                         name={fields.name}
                         required={isRequired}
                         onChange={handleChange}
@@ -114,7 +111,6 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                       </span>
                       <Input
                         type={fields.fieldType}
-                        required
                         name={fields.name}
                         required={isRequired}
                         onChange={handleChange}
