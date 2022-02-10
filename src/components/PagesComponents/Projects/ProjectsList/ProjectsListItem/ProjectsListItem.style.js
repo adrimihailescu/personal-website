@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import stylesVariables from "../../../../../sharedStyles"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export const Card = styled.li`
   list-style: none;
@@ -27,29 +28,6 @@ export const Card = styled.li`
     &:before {
       transition: opacity 300ms ${stylesVariables.easing.inOutSine};
       opacity: 1;
-    }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    @media (min-width: ${stylesVariables.media.tablet}) {
-      border-radius: 10px;
-      width: 90%;
-    }
-
-    @media (min-width: ${stylesVariables.media.screen}) {
-      border-radius: 30px;
-      width: 90%;
-    }
-
-    @media (min-width: ${stylesVariables.media.bigScreen}) {
-      border-radius: 40px;
-      width: 80%;
     }
   }
 
@@ -114,5 +92,28 @@ export const Card = styled.li`
         }
       }
     }
+  }
+`
+
+export const CustomGatsbyImage = styled(GatsbyImage)`
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    border-radius: 10px;
+    width: 90%;
+  }
+
+  @media (min-width: ${stylesVariables.media.screen}) {
+    border-radius: 30px;
+    width: 90%;
+  }
+
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    border-radius: 40px;
+    width: 80%;
   }
 `

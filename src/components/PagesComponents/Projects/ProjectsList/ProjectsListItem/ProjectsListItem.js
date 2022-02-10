@@ -1,6 +1,6 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Card } from "./ProjectsListItem.style"
+import { getImage } from "gatsby-plugin-image"
+import { Card, CustomGatsbyImage } from "./ProjectsListItem.style"
 
 const ProjectsListItem = ({ title, image, tools, links: { Github, Live } }) => {
   const pathToImage = getImage(image)
@@ -9,7 +9,7 @@ const ProjectsListItem = ({ title, image, tools, links: { Github, Live } }) => {
     <Card>
       <h3>{title}</h3>
 
-      <GatsbyImage image={pathToImage} alt={title} />
+      <CustomGatsbyImage image={pathToImage} alt={title} />
       <span className="tools"> {tools.join("|")} </span>
       {(Github || Live) && (
         <ul>

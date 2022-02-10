@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import stylesVariables from "../../../../sharedStyles"
 
 export const Cards = styled.ul`
