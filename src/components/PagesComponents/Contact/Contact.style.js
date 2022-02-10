@@ -25,6 +25,12 @@ export const Label = styled.label`
   display: block;
   margin: 10px;
   margin-bottom: 10px;
+
+  .form-span {
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
 `
 
 export const Input = styled.input`

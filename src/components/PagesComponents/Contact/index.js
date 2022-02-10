@@ -8,7 +8,6 @@ import {
 } from "../../../sharedStyles"
 import {
   Form,
-  ParagraphPanelContact,
   Label,
   Input,
   Textarea,
@@ -90,7 +89,7 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                 case "textarea":
                   return (
                     <Label key={`form-${fields.name}`}>
-                      <span>
+                      <span className="form-span">
                         {fields.label}
                         {isRequired ? "*" : null}
                       </span>
@@ -109,7 +108,7 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
                 default:
                   return (
                     <Label key={`form-${fields.name}`}>
-                      <span>
+                      <span className="form-span">
                         {fields.label}
                         {isRequired ? "*" : null}
                       </span>
