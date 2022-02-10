@@ -9,30 +9,8 @@ export const Form = styled.form`
   margin: 0 auto;
   padding: 10px;
   max-width: 350px;
-  border: none;
-  position: relative;
-
-  &:before {
-    z-index: -1;
-    display: block;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 40px;
-    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainColor};
-    transition: opacity 200ms ${stylesVariables.easing.inSine};
-    opacity: 0;
-  }
-
-  &:hover {
-    &:before {
-      transition: opacity 300ms ${stylesVariables.easing.inOutSine};
-      opacity: 1;
-    }
-  }
+  box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainColor};
+  border-radius: 40px;
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     max-width: 550px;
