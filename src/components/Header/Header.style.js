@@ -11,7 +11,6 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
-  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
 
   > * {
     margin-left: 15px;
@@ -33,7 +32,7 @@ export const HeaderWrapper = styled.header`
   }
 
   .developer {
-    text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80}, 3px 3px 3px ${stylesVariables.colors.primary80};
   }
 
   
@@ -57,7 +56,7 @@ export const HeaderWrapper = styled.header`
   h1 {
     color: ${stylesVariables.colors.colorTitle};
     font-size: ${stylesVariables.fontSizes.logoText.mobile};
-    text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80}, 3px 3px 3px ${stylesVariables.colors.primary80};
     margin-bottom: 0; 
 
     @media (min-width: ${stylesVariables.media.tablet}) {
@@ -73,16 +72,16 @@ export const HeaderWrapper = styled.header`
 `
 export const BackButton = styled.button`
   color: ${stylesVariables.colors.primary80};
-  font-size: 10px;
+  font-size: 14px;
   background-color: ${stylesVariables.colors.mainText};
   border: none;
   border-radius: 30px;
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: 10px;
   transform: translate(0, -50%);
-  max-width: 60px;
-  padding: 3px 6px 4px;
+  max-width: 90px;
+  padding: 7px 11px 8px;
   transition: background-color 300ms ease-in;
   cursor: pointer;
 
@@ -111,16 +110,16 @@ export const BackButton = styled.button`
   }
 
   @media (min-width: ${stylesVariables.media.tablet}) {
-    max-width: 80px;
+    max-width: 90px;
     font-size: 16px;
-    padding: 3px 6px 4px;
+    padding: 4px 8px 5px;
     right: 30px;
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     max-width: 100px;
     font-size: 20px;
-    padding: 4px 8px 5px;
+    padding: 6px 10px 7px;
     right: 40px;
   }
 `
