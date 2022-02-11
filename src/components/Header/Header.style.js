@@ -2,16 +2,20 @@ import styled from "styled-components"
 import stylesVariables from "../../sharedStyles"
 
 export const HeaderWrapper = styled.header`
-  justify-content: center;
-  align-items: center;
-  display: flex;
   position: relative;
-  justify-content: left;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: ${stylesVariables.headerHight.mobile};
   width: 100%;
-  top: 0;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+
+  > * {
+    margin-left: 15px;
+  } 
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
@@ -21,7 +25,6 @@ export const HeaderWrapper = styled.header`
   @media (min-width: ${stylesVariables.media.screen}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
     height: ${stylesVariables.headerHight.screen};
-    justify-content: center;
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
@@ -29,19 +32,38 @@ export const HeaderWrapper = styled.header`
     height: ${stylesVariables.headerHight.bigScreen};
   }
 
-  h1 {
-    color: ${stylesVariables.colors.colorTitle};
-    font-size: ${stylesVariables.fontSizes.logoText.mobile};
-    margin-bottom: 0;
-    margin-left: 10px;
+  .developer {
     text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+  }
+
+  
 
     @media (min-width: ${stylesVariables.media.tablet}) {
-      font-size: ${stylesVariables.fontSizes.logoText.tablet};
+      text-align: center;
+      justify-content: center;
     }
 
     @media (min-width: ${stylesVariables.media.screen}) {
-      margin-left: 0;
+      text-align: center;
+      justify-content: center;
+    }
+
+    @media (min-width: ${stylesVariables.media.bigScreen}) {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  h1 {
+    color: ${stylesVariables.colors.colorTitle};
+    font-size: ${stylesVariables.fontSizes.logoText.mobile};
+    text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+    margin-bottom: 0; 
+
+    @media (min-width: ${stylesVariables.media.tablet}) {
+      font-size: ${stylesVariables.fontSizes.logoText.tablet};
+      text-align: center;
+      justify-content: center;
     }
 
     @media (min-width: ${stylesVariables.media.bigScreen}) {

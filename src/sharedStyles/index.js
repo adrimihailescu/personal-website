@@ -85,10 +85,10 @@ const stylesVariables = {
     mobile: "500px",
   },
   headerHight: {
-    bigScreen: "90px",
-    screen: "70px",
-    tablet: "50px",
-    mobile: "40px",
+    bigScreen: "110px",
+    screen: "90px",
+    tablet: "90px",
+    mobile: "70px",
   },
 }
 

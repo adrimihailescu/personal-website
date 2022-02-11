@@ -9,6 +9,7 @@ const Header = ({ location }) => {
   return (
     <HeaderWrapper>
       <h1>Adriana Mihailescu</h1>
+      <span className="developer">Frontend Developer</span>
       {url === "/" && activePanel && (
         <BackButton onClick={() => setActivePanel(undefined)}>
           Go back
