@@ -31,19 +31,24 @@ const stylesVariables = {
       mobile: "30px",
     },
     heading2: {
+      laptop: "80px",
+      tablet: "50px",
+      mobile: "40px",
+    },
+    heading3: {
       laptop: "30px",
       tablet: "25px",
       mobile: "20px",
-    },
-    heading3: {
-      laptop: "26px",
-      tablet: "22px",
-      mobile: "18px",
     },
     heading4: {
       laptop: "23px",
       tablet: "20px",
       mobile: "16px",
+    },
+    heading5: {
+      laptop: "20px",
+      tablet: "18px",
+      mobile: "14px",
     },
     aTags: {
       laptop: "20px",
@@ -92,10 +97,11 @@ const stylesVariables = {
   },
 }
 
-export const SectionPanelTitle = styled.h1`
+export const SectionPanelTitle = styled.h2`
   color: ${stylesVariables.colors.colorTitle};
   text-transform: capitalize;
-  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+  text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
+    3px 3px 3px ${stylesVariables.colors.primary80};
 
   ${({ isTextVertical }) =>
     isTextVertical &&
@@ -107,7 +113,6 @@ export const SectionPanelTitle = styled.h1`
 
 export const SectionContent = styled.div`
   transition: all 0.5s ease;
-  padding: 10px;
   font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   ${({ state }) =>
     state === "entering" &&
@@ -135,9 +140,10 @@ export const SectionContent = styled.div`
     `};
 `
 
-export const SectionPanelSubtitle = styled.h2`
+export const SectionPanelSubtitle = styled.h3`
   color: ${stylesVariables.colors.mainText};
-  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+  text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
+    3px 3px 3px ${stylesVariables.colors.primary80};
 `
 
 export default stylesVariables

@@ -15,7 +15,7 @@ export const MainWrapper = styled.main`
   *::-webkit-scrollbar-thumb {
     background-color: ${stylesVariables.colors.primary30};
     border-radius: 20px;
-    border: 3px solid #37338c;
+    border: 3px solid ${stylesVariables.colors.primary80};
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
@@ -134,14 +134,14 @@ export const SectionPanel = styled.section`
     width: 100%;
     transition: transform 0.5s;
     max-width: 1200px;
-    margin-top: 40px;
+    margin: 40px auto;
 
     @media (min-width: ${stylesVariables.media.tablet}) {
-      margin-top: 90px;
+      margin: 90px auto;
     }
 
     @media (min-width: ${stylesVariables.media.bigScreen}) {
-      margin-top: 100px;
+      margin: 100px auto;
     }
   }
 `

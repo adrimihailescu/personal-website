@@ -7,7 +7,7 @@ const ProjectsListItem = ({ title, image, tools, links: { Github, Live } }) => {
 
   return (
     <Card>
-      <h3>{title}</h3>
+      <h4>{title}</h4>
 
       <CustomGatsbyImage image={pathToImage} alt={title} />
       <span className="tools"> {tools.join("|")} </span>

@@ -2,7 +2,6 @@ import styled from "styled-components"
 import stylesVariables from "../../../sharedStyles"
 
 export const Form = styled.form`
-  /* box-sizing: border-box; */
   display: flex;
   flex-direction: column;
   color: ${stylesVariables.colors.mainText};
@@ -49,6 +48,11 @@ export const Input = styled.input`
   padding: 10px;
   width: 100%;
   margin: 0 auto;
+  background-color: ${stylesVariables.colors.primary0};
+
+  &:focus {
+    background-color: ${stylesVariables.colors.mainText};
+  }
 `
 
 export const Textarea = styled.textarea`
@@ -59,6 +63,11 @@ export const Textarea = styled.textarea`
   width: 100%;
   margin: 0 auto;
   margin-bottom: 10px;
+  background-color: ${stylesVariables.colors.primary0};
+
+  &:focus {
+    background-color: ${stylesVariables.colors.mainText};
+  }
 `
 
 export const ButtonPanelContact = styled.button`
@@ -75,6 +84,7 @@ export const ButtonPanelContact = styled.button`
   color: ${stylesVariables.colors.primary80};
   position: relative;
   cursor: pointer;
+  font-size: 15px;
 
   &:before {
     z-index: 0;

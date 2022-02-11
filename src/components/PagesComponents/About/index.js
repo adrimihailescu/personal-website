@@ -9,8 +9,6 @@ import {
 } from "../../../sharedStyles"
 import { DivPanelAbout } from "./About.style"
 
-//add styles for the DivPanel
-
 const AboutMe = ({ isTextVertical, animateIn, data }) => {
   const { title, subtitle, content } = data
 

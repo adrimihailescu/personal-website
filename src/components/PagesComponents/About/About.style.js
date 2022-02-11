@@ -8,8 +8,8 @@ export const DivPanelAbout = styled.div`
   max-width: 400px;
   display: block;
   padding: 10px;
-  border-bottom: 2px;
-  text-shadow: 2px 2px 2px #37338c, 3px 3px 3px #37338c;
+  text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
+    3px 3px 3px ${stylesVariables.colors.primary80};
   border-top: 10px solid ${stylesVariables.colors.grey};
   border-bottom: 10px solid ${stylesVariables.colors.grey};
   border-radius: 40px;

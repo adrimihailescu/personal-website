@@ -1,8 +1,6 @@
 import React from "react"
 import Header from "../Header/Header"
 
-// import Footer from "../Footer/Footer"
-
 import { createGlobalStyle } from "styled-components"
 import stylesVariables from "../../sharedStyles"
 
@@ -77,18 +75,24 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${stylesVariables.fontSizes.heading1.mobile};
   }
 
-  h2, h3 {
-    margin-bottom: 20px;
+  h2 {
+    margin-bottom: 30px;
     font-size: ${stylesVariables.fontSizes.heading2.mobile};
+    color: ${stylesVariables.colors.mainText};
+    margin-top: 20px;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: ${stylesVariables.fontSizes.heading3.mobile};
     color: ${stylesVariables.colors.mainText};
     margin-top: 20px;
   }
   
   h4 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: ${stylesVariables.fontSizes.heading4.mobile};
     color: ${stylesVariables.colors.mainText};
-    padding: 10px;
   }
 
   a , span{
@@ -97,12 +101,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   
-
-  /* span {
-    font-size:
-  } */
-  
-  // tablet
+// tablet
   @media (min-width: ${stylesVariables.media.tablet}) {
     p {
       margin-bottom: 20px;
@@ -110,13 +109,17 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-      margin-bottom: 40px;
       font-size: ${stylesVariables.fontSizes.heading1.tablet};
     }
 
-    h2, h3 {
+    h2 {
       margin-bottom: 30px;
       font-size: ${stylesVariables.fontSizes.heading2.tablet};
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-size: ${stylesVariables.fontSizes.heading3.tablet};
       margin-top: 30px;
     }
 
@@ -142,9 +145,14 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${stylesVariables.fontSizes.heading1.tablet};
     }
 
-    h2, h3 {
-      margin-bottom: 30px;
+    h2 {
+      margin-bottom: 40px;
       font-size: ${stylesVariables.fontSizes.heading2.tablet};
+    }
+
+    h3 {
+      margin-bottom: 30px;
+      font-size: ${stylesVariables.fontSizes.heading3.tablet};
       margin-top: 30px;
     }
 
@@ -170,10 +178,17 @@ const GlobalStyle = createGlobalStyle`
       font-size: ${stylesVariables.fontSizes.heading1.laptop};
     }
 
-    h2, h3 {
-      margin-bottom: 40px;
+    h2 {
+      margin-bottom: 50px;
       font-size: ${stylesVariables.fontSizes.heading2.laptop};
+    }
+
+
+    h3{
+      margin-bottom: 40px;
+      font-size: ${stylesVariables.fontSizes.heading3.laptop};
       margin-top: 40px;
+
     }
 
     h4 {
@@ -188,10 +203,7 @@ const GlobalStyle = createGlobalStyle`
 
   
 
-  
-
-
-  *::-webkit-scrollbar {
+   *::-webkit-scrollbar {
       width: 10px;
   }
   *::-webkit-scrollbar-track {
@@ -200,7 +212,7 @@ const GlobalStyle = createGlobalStyle`
   *::-webkit-scrollbar-thumb {
     background-color: ${stylesVariables.colors.primary30};
     border-radius: 20px;
-    border: 3px solid #37338c;
+    border: 3px solid ${stylesVariables.colors.primary80};
   }
 
   input, textarea, select, button {
