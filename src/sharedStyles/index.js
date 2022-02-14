@@ -81,6 +81,7 @@ const stylesVariables = {
   animationTime: {
     mainPage: 650,
     menuTitles: 600,
+    headerButton: 250,
   },
 
   // media breakpoints

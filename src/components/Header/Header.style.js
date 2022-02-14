@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import stylesVariables from "../../sharedStyles"
 
 export const HeaderWrapper = styled.header`
@@ -6,7 +6,7 @@ export const HeaderWrapper = styled.header`
   --tablet: ${stylesVariables.headerHight.tablet};
   --screen: ${stylesVariables.headerHight.screen};
   --bigScreen: ${stylesVariables.headerHight.bigScreen};
-  
+
   position: relative;
   line-height: 1;
   display: flex;
@@ -15,59 +15,51 @@ export const HeaderWrapper = styled.header`
   height: calc(var(--mobile) - 1px);
   width: 100%;
   border-bottom: 1px solid ${stylesVariables.colors.colorTitle};
-
   background-color: #000000;
-  background-image:  radial-gradient(${stylesVariables.colors.primary80} 0.75px, transparent 0.75px), radial-gradient(${stylesVariables.colors.primary80} 0.75px, #000000 0.75px);
+  background-image: radial-gradient(
+      ${stylesVariables.colors.primary80} 0.75px,
+      transparent 0.75px
+    ),
+    radial-gradient(${stylesVariables.colors.primary80} 0.75px, #000000 0.75px);
   background-size: 30px 30px;
-  background-position: 0 0,15px 15px;
+  background-position: 0 0, 15px 15px;
 
   > * {
     margin-left: 15px;
-  } 
+  }
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
-    height:calc(var(--tablet) - 1px);
+    height: calc(var(--tablet) - 1px);
+    text-align: center;
+    justify-content: center;
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
-    height:calc(var(--screen) - 1px);
-
+    height: calc(var(--screen) - 1px);
+    text-align: center;
+    justify-content: center;
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     font-size: ${stylesVariables.fontSizes.heading1.laptop};
-    height:calc(var(--bigScreen) - 1px);
+    height: calc(var(--bigScreen) - 1px);
+    text-align: center;
+    justify-content: center;
   }
 
   .developer {
-    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80}, 3px 3px 3px ${stylesVariables.colors.primary80};
-  }
-
-  
-
-    @media (min-width: ${stylesVariables.media.tablet}) {
-      text-align: center;
-      justify-content: center;
-    }
-
-    @media (min-width: ${stylesVariables.media.screen}) {
-      text-align: center;
-      justify-content: center;
-    }
-
-    @media (min-width: ${stylesVariables.media.bigScreen}) {
-      text-align: center;
-      justify-content: center;
-    }
+    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
+      3px 3px 3px ${stylesVariables.colors.primary80};
   }
 
   h1 {
     color: ${stylesVariables.colors.colorTitle};
     font-size: ${stylesVariables.fontSizes.logoText.mobile};
-    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80}, 3px 3px 3px ${stylesVariables.colors.primary80};
-    margin-bottom: 0; 
+    text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
+      3px 3px 3px ${stylesVariables.colors.primary80};
+    margin-bottom: 0;
 
     @media (min-width: ${stylesVariables.media.tablet}) {
       font-size: ${stylesVariables.fontSizes.logoText.tablet};
@@ -80,6 +72,7 @@ export const HeaderWrapper = styled.header`
     }
   }
 `
+
 export const BackButton = styled.button`
   color: ${stylesVariables.colors.primary80};
   font-size: 14px;
@@ -92,8 +85,38 @@ export const BackButton = styled.button`
   transform: translate(0, -50%);
   max-width: 90px;
   padding: 7px 11px 8px;
-  transition: background-color 300ms ease-in;
+  transition: color 300ms ease-in;
   cursor: pointer;
+
+  ${({ state }) =>
+    state === "entering" &&
+    css`
+      opacity: 0;
+      visibility: visible;
+    `};
+
+  ${({ state }) =>
+    state === "entered" &&
+    css`
+      transition: all ${stylesVariables.animationTime.headerButton}ms
+        ${stylesVariables.easing.inSine};
+      opacity: 1;
+    `};
+
+  ${({ state }) =>
+    state === "exiting" &&
+    css`
+      opacity: 1;
+    `};
+
+  ${({ state }) =>
+    state === "exited" &&
+    css`
+      transition: all ${stylesVariables.animationTime.headerButton}ms
+        ${stylesVariables.easing.inOutSine};
+      opacity: 0;
+      visibility: hidden;
+    `};
 
   &:before {
     z-index: 0;
@@ -111,6 +134,7 @@ export const BackButton = styled.button`
   }
 
   &:hover {
+    transition: color 300ms ease-out;
     color: ${stylesVariables.colors.greyDarkSlate};
 
     &:before {
