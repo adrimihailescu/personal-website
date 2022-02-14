@@ -113,6 +113,7 @@ export const SectionPanelTitle = styled.h2`
 `
 
 export const SectionContent = styled.div`
+  padding: 0 20px;
   transition: all 0.5s ease;
   font-size: ${stylesVariables.fontSizes.bodyText.mobile};
   ${({ state }) =>

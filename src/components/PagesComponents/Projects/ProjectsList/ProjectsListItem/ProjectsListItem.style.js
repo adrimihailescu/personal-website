@@ -5,11 +5,15 @@ import { GatsbyImage } from "gatsby-plugin-image"
 export const Card = styled.li`
   list-style: none;
   position: relative;
-  margin: 20px;
+  margin: 20px 0;
   background-color: ${stylesVariables.colors.primary86};
   border-radius: 40px;
   padding-top: 15px;
   padding-bottom: 15px;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    margin: 20px;
+  }
 
   &:before {
     z-index: -1;
@@ -21,7 +25,7 @@ export const Card = styled.li`
     width: 100%;
     height: 100%;
     border-radius: 40px;
-    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainText};
+    box-shadow: 0px 0px 16px 0px ${stylesVariables.colors.primary0};
     transition: opacity 200ms ${stylesVariables.easing.inSine};
     opacity: 0;
   }

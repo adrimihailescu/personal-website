@@ -143,7 +143,7 @@ export const SectionPanel = styled.section`
 
   // applyes to second child item of panel section (content area)
    > div:nth-child(2) {
-    width: 100%;
+    /* width: 100%; */
     transition: transform 0.5s;
     max-width: 1200px;
     margin: 40px auto;
