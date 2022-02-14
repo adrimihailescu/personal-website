@@ -87,9 +87,21 @@ export const SectionPanel = styled.section`
 
   height: calc(100vh - var(--mobile));
   transform-style: preserve-3d;
+
+  &:nth-child(2) {
+    border-left: 1px solid ${stylesVariables.colors.colorTitle};
+    border-right: 1px solid ${stylesVariables.colors.colorTitle};
+  }
+
   background-color: #000000;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
-  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  background-image: radial-gradient(
+      ${stylesVariables.colors.colorTitle} 0.75px,
+      transparent 0.75px
+    ),
+    radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, #000000 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+
   color: ${stylesVariables.colors.mainColor};
   text-align: center;
   align-items: center;

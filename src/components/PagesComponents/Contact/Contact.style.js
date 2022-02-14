@@ -8,24 +8,24 @@ export const Form = styled.form`
   margin: 0 auto;
   padding: 10px;
   max-width: 320px;
-  border-top: 10px solid ${stylesVariables.colors.grey};
-  border-bottom: 10px solid ${stylesVariables.colors.grey};
+  border-top: 10px solid ${stylesVariables.colors.primary30};
+  border-bottom: 10px solid ${stylesVariables.colors.primary30};
   border-radius: 40px;
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     max-width: 500px;
     border-top: 0;
     border-bottom: 0;
-    border-left: 10px solid ${stylesVariables.colors.grey};
-    border-right: 10px solid ${stylesVariables.colors.grey};
+    border-left: 10px solid ${stylesVariables.colors.primary30};
+    border-right: 10px solid ${stylesVariables.colors.primary30};
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     max-width: 600px;
     border-top: 0;
     border-bottom: 0;
-    border-left: 10px solid ${stylesVariables.colors.grey};
-    border-right: 10px solid ${stylesVariables.colors.grey};
+    border-left: 10px solid ${stylesVariables.colors.primary30};
+    border-right: 10px solid ${stylesVariables.colors.primary30};
   }
 `
 

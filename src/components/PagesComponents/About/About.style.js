@@ -7,34 +7,34 @@ export const DivPanelAbout = styled.div`
   margin: 0 auto;
   max-width: 400px;
   display: block;
-  padding: 10px;
+  padding: 30px 10px;
   text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
     3px 3px 3px ${stylesVariables.colors.primary80};
-  border-top: 10px solid ${stylesVariables.colors.grey};
-  border-bottom: 10px solid ${stylesVariables.colors.grey};
+  border-top: 10px solid ${stylesVariables.colors.primary30};
+  border-bottom: 10px solid ${stylesVariables.colors.primary30};
   border-radius: 40px;
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     max-width: 500px;
     border-left: 0;
     border-right: 0;
-    border-top: 10px solid ${stylesVariables.colors.grey};
-    border-bottom: 10px solid ${stylesVariables.colors.grey};
+    border-top: 10px solid ${stylesVariables.colors.primary30};
+    border-bottom: 10px solid ${stylesVariables.colors.primary30};
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
     max-width: 600px;
     border-left: 0;
     border-right: 0;
-    border-top: 10px solid ${stylesVariables.colors.grey};
-    border-bottom: 10px solid ${stylesVariables.colors.grey};
+    border-top: 10px solid ${stylesVariables.colors.primary30};
+    border-bottom: 10px solid ${stylesVariables.colors.primary30};
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     max-width: 800px;
     border-left: 0;
     border-right: 0;
-    border-top: 10px solid ${stylesVariables.colors.grey};
-    border-bottom: 10px solid ${stylesVariables.colors.grey};
+    border-top: 10px solid ${stylesVariables.colors.primary30};
+    border-bottom: 10px solid ${stylesVariables.colors.primary30};
   }
 `

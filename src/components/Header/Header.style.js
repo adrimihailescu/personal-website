@@ -2,15 +2,24 @@ import styled from "styled-components"
 import stylesVariables from "../../sharedStyles"
 
 export const HeaderWrapper = styled.header`
+  --mobile: ${stylesVariables.headerHight.mobile};
+  --tablet: ${stylesVariables.headerHight.tablet};
+  --screen: ${stylesVariables.headerHight.screen};
+  --bigScreen: ${stylesVariables.headerHight.bigScreen};
+  
   position: relative;
   line-height: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: ${stylesVariables.headerHight.mobile};
+  height: calc(var(--mobile) - 1px);
   width: 100%;
+  border-bottom: 1px solid ${stylesVariables.colors.colorTitle};
+
   background-color: #000000;
-  background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  background-image:  radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, transparent 0.75px), radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, #000000 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0,15px 15px;
 
   > * {
     margin-left: 15px;
@@ -18,17 +27,18 @@ export const HeaderWrapper = styled.header`
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
-    height: ${stylesVariables.headerHight.tablet};
+    height:calc(var(--tablet) - 1px);
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
     font-size: ${stylesVariables.fontSizes.heading1.tablet};
-    height: ${stylesVariables.headerHight.screen};
+    height:calc(var(--screen) - 1px);
+
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     font-size: ${stylesVariables.fontSizes.heading1.laptop};
-    height: ${stylesVariables.headerHight.bigScreen};
+    height:calc(var(--bigScreen) - 1px);
   }
 
   .developer {
