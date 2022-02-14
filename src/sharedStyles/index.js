@@ -12,6 +12,7 @@ const stylesVariables = {
     primary30: "#938dff",
     primary50: "#8400ff",
     primary80: "#37338c",
+    primary86: "#373396",
     special: "#ff005a",
   },
   fontSizes: {

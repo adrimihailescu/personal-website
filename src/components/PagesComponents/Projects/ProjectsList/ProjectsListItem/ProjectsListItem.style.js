@@ -6,9 +6,10 @@ export const Card = styled.li`
   list-style: none;
   position: relative;
   margin: 20px;
-  background-color: ${stylesVariables.colors.grey};
+  background-color: ${stylesVariables.colors.primary86};
   border-radius: 40px;
-  padding: 15px 0 0 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   &:before {
     z-index: -1;
