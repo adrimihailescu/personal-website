@@ -11,8 +11,8 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Adriana Mihailescu",
-    description: "My personal website",
+    title: "adrianam.dev",
+    description: "Frontend developer",
     author: "@adrimihailescu",
     person: { name: "adri", age: 35 },
   },
@@ -54,5 +54,6 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }

@@ -3,6 +3,7 @@ import Header from "../Header/Header"
 
 import { createGlobalStyle } from "styled-components"
 import stylesVariables from "../../sharedStyles"
+import SEO from "./SEO"
 
 const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -227,6 +228,7 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   return (
     <>
+      <SEO title={"Homepage"} />
       <GlobalStyle />
       <Header />
       {children}
