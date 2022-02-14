@@ -8,6 +8,7 @@ export const Card = styled.li`
   margin: 20px;
   background-color: ${stylesVariables.colors.grey};
   border-radius: 40px;
+  padding: 15px 0 0 15px;
 
   &:before {
     z-index: -1;
@@ -62,10 +63,10 @@ export const Card = styled.li`
       color: ${stylesVariables.colors.primary80};
       background-color: ${stylesVariables.colors.mainText};
       height: 20px;
-      padding: 3px 10px 5px;
+      padding: 7px 11px 8px;
       border: none;
       border-radius: 30px;
-      max-width: 80px;
+      max-width: 90px;
       position: relative;
 
       &:before {
