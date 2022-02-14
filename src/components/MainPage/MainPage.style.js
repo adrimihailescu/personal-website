@@ -7,15 +7,15 @@ export const MainWrapper = styled.main`
   display: flex;
   font-size: ${stylesVariables.fontSizes.bodyText.laptop};
   *::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
   }
   *::-webkit-scrollbar-track {
-    background: ${stylesVariables.colors.grey};
+    background: ${stylesVariables.colors.primary86};
   }
   *::-webkit-scrollbar-thumb {
     background-color: ${stylesVariables.colors.primary30};
     border-radius: 20px;
-    border: 3px solid ${stylesVariables.colors.primary80};
+    border: 2px solid ${stylesVariables.colors.primary80};
   }
 
   @media (min-width: ${stylesVariables.media.screen}) {
@@ -95,10 +95,10 @@ export const SectionPanel = styled.section`
 
   background-color: #000000;
   background-image: radial-gradient(
-      ${stylesVariables.colors.colorTitle} 0.75px,
+      ${stylesVariables.colors.primary80} 0.75px,
       transparent 0.75px
     ),
-    radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, #000000 0.75px);
+    radial-gradient(${stylesVariables.colors.primary80} 0.75px, #000000 0.75px);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
 
