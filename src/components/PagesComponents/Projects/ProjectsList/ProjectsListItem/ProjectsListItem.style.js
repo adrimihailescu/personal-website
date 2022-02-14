@@ -21,7 +21,7 @@ export const Card = styled.li`
     width: 100%;
     height: 100%;
     border-radius: 40px;
-    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainColor};
+    box-shadow: 0px 0px 12px -1px ${stylesVariables.colors.mainText};
     transition: opacity 200ms ${stylesVariables.easing.inSine};
     opacity: 0;
   }
