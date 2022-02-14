@@ -10,7 +10,7 @@ export const MainWrapper = styled.main`
     width: 7px;
   }
   *::-webkit-scrollbar-track {
-    background: ${stylesVariables.colors.primary86};
+    background: black;
   }
   *::-webkit-scrollbar-thumb {
     background-color: ${stylesVariables.colors.primary30};

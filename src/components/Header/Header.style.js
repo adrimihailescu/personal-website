@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.header`
   border-bottom: 1px solid ${stylesVariables.colors.colorTitle};
 
   background-color: #000000;
-  background-image:  radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, transparent 0.75px), radial-gradient(${stylesVariables.colors.colorTitle} 0.75px, #000000 0.75px);
+  background-image:  radial-gradient(${stylesVariables.colors.primary80} 0.75px, transparent 0.75px), radial-gradient(${stylesVariables.colors.primary80} 0.75px, #000000 0.75px);
   background-size: 30px 30px;
   background-position: 0 0,15px 15px;
 

@@ -23,6 +23,13 @@ const GetWebsiteData = () => {
         }
       }
 
+      site {
+        siteMetadata {
+          title
+          description
+        }
+      }
+
       allContentfulAboutPage {
         nodes {
           title
