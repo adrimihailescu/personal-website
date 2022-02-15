@@ -17,6 +17,7 @@ module.exports = {
     person: { name: "adri", age: 35 },
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
