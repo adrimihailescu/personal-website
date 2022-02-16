@@ -1,11 +1,6 @@
 import React, { useState } from "react"
-import { Transition } from "react-transition-group"
 
-import {
-  SectionPanelTitle,
-  SectionPanelSubtitle,
-  SectionContent,
-} from "../../../sharedStyles"
+import { SectionPanelTitle, SectionPanelSubtitle } from "../../../sharedStyles"
 import {
   Form,
   Label,
@@ -73,72 +68,66 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
   }
 
   return (
-    <Transition in={animateIn} timeout={500}>
-      {state => (
-        <SectionContent state={state}>
-          <SectionPanelTitle isTextVertical={false}>{title}</SectionPanelTitle>
-          <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
-          <h4>{description}</h4>
-          <Form onSubmit={handleSubmit}>
-            {formFieldGroups.map(field => {
-              const fields = field.fields[0]
-              const isRequired = fields.required
+    <>
+      <SectionPanelTitle isTextVertical={false}>{title}</SectionPanelTitle>
+      <SectionPanelSubtitle>{subtitle}</SectionPanelSubtitle>
+      <h4>{description}</h4>
+      <Form onSubmit={handleSubmit}>
+        {formFieldGroups.map(field => {
+          const fields = field.fields[0]
+          const isRequired = fields.required
 
-              if (!fields.enabled) return null
+          if (!fields.enabled) return null
 
-              switch (fields.fieldType) {
-                case "textarea":
-                  return (
-                    <Label key={`form-${fields.name}`}>
-                      <span className="form-span">
-                        {fields.label}
-                        {isRequired ? "*" : null}
-                      </span>
-                      <Textarea
-                        type={fields.fieldType}
-                        name={fields.name}
-                        required={isRequired}
-                        onChange={handleChange}
-                        value={formData[fields.name] || ""}
-                        placeholder={fields.placeholder}
-                      />
-                    </Label>
-                  )
+          switch (fields.fieldType) {
+            case "textarea":
+              return (
+                <Label key={`form-${fields.name}`}>
+                  <span className="form-span">
+                    {fields.label}
+                    {isRequired ? "*" : null}
+                  </span>
+                  <Textarea
+                    type={fields.fieldType}
+                    name={fields.name}
+                    required={isRequired}
+                    onChange={handleChange}
+                    value={formData[fields.name] || ""}
+                    placeholder={fields.placeholder}
+                  />
+                </Label>
+              )
 
-                default:
-                  return (
-                    <Label key={`form-${fields.name}`}>
-                      <span className="form-span">
-                        {fields.label}
-                        {isRequired ? "*" : null}
-                      </span>
-                      <Input
-                        type={fields.fieldType}
-                        name={fields.name}
-                        required={isRequired}
-                        onChange={handleChange}
-                        value={formData[fields.name] || ""}
-                        placeholder={fields.placeholder}
-                      />
-                    </Label>
-                  )
-              }
-            })}
-            <ButtonPanelContact type="submit">
-              {formSubmitText}
-            </ButtonPanelContact>
-          </Form>
-          {formsSubmitStatus.success ? (
-            <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
-          ) : null}
-          {formsSubmitStatus.fail ? (
-            <p style={{ color: "red" }}>
-              Error submiting form, please try again later
-            </p>
-          ) : null}
-        </SectionContent>
-      )}
-    </Transition>
+            default:
+              return (
+                <Label key={`form-${fields.name}`}>
+                  <span className="form-span">
+                    {fields.label}
+                    {isRequired ? "*" : null}
+                  </span>
+                  <Input
+                    type={fields.fieldType}
+                    name={fields.name}
+                    required={isRequired}
+                    onChange={handleChange}
+                    value={formData[fields.name] || ""}
+                    placeholder={fields.placeholder}
+                  />
+                </Label>
+              )
+          }
+        })}
+        <ButtonPanelContact type="submit">{formSubmitText}</ButtonPanelContact>
+      </Form>
+      {formsSubmitStatus.success ? (
+        <p style={{ color: "lime" }}>{formSubmitSuccess}</p>
+      ) : null}
+      {formsSubmitStatus.fail ? (
+        <p style={{ color: "red" }}>
+          Error submiting form, please try again later
+        </p>
+      ) : null}
+    </>
   )
 }
 

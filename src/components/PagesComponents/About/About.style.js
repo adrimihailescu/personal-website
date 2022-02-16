@@ -1,15 +1,13 @@
 import styled from "styled-components"
 import stylesVariables from "../../../sharedStyles"
 
-export const DivPanelAbout = styled.div`
+export const AboutWrapper = styled.div`
   // content in About
   color: ${stylesVariables.colors.mainText};
   margin: 0 auto;
   max-width: 400px;
   display: block;
   padding: 30px 10px;
-  text-shadow: 2px 2px 2px ${stylesVariables.colors.primary80},
-    3px 3px 3px ${stylesVariables.colors.primary80};
   border-top: 10px solid ${stylesVariables.colors.primary30};
   border-bottom: 10px solid ${stylesVariables.colors.primary30};
   border-radius: 40px;

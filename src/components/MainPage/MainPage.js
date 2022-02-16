@@ -14,7 +14,11 @@ import Projects from "../PagesComponents/Projects"
 import NotFound from "../../pages/404"
 
 import { MainWrapper, SectionPanel, SectionMenuStyle } from "./MainPage.style"
-import StylesVariables, { SectionPanelTitle } from "../../sharedStyles"
+import StylesVariables, {
+  SectionPanelTitle,
+  SectionContent,
+} from "../../sharedStyles"
+import Footer from "../Footer/Footer"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -89,11 +93,17 @@ const MainPage = () => {
                       </SectionMenuStyle>
                     )}
                   </Transition>
-                  <RenderedElement
-                    data={elementData}
-                    isTextVertical={activePanel}
-                    animateIn={mainWrapperState === "entered" && isActive}
-                  />
+                  <Transition
+                    in={mainWrapperState === "entered" && isActive}
+                    timeout={500}
+                  >
+                    {state => (
+                      <SectionContent state={state}>
+                        <RenderedElement data={elementData} />
+                        <Footer />
+                      </SectionContent>
+                    )}
+                  </Transition>
                 </SectionPanel>
               )
             })}
