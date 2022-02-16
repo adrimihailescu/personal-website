@@ -228,7 +228,7 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children }) => {
   return (
     <>
-      <SEO title={"Homepage"} />
+      <SEO title={"Frontend Developer"} />
       <GlobalStyle />
       <Header />
       {children}

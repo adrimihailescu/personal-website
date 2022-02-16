@@ -12,7 +12,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "adrianam.dev",
-    description: "Frontend developer",
+    description:
+      "Frontend developer making better,prettier websites,one line of code at a time",
+    keywords:
+      "web developer, React, Gatsby, styled-components, frontend developer, javascript, app, graphql",
     author: "@adrimihailescu",
     person: { name: "adri", age: 35 },
   },
