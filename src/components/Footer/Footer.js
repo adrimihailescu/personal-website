@@ -8,18 +8,16 @@ const Footer = styled.footer`
 
   @media (min-width: ${stylesVariables.media.tablet}) {
     margin: 60px auto;
-    margin-bottom: auto;
   }
 
   @media (min-width: ${stylesVariables.media.bigScreen}) {
     margin: 150px auto;
-    margin-bottom: auto;
   }
 
   a {
-    font-size: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 

@@ -149,11 +149,11 @@ export const SectionPanel = styled.section`
     margin: 40px auto 0;
 
     @media (min-width: ${stylesVariables.media.tablet}) {
-      margin: 90px auto;
+      margin: 90px auto 0;
     }
 
     @media (min-width: ${stylesVariables.media.bigScreen}) {
-      margin: 100px auto;
+      margin: 100px auto 0;
     }
   }
 `
