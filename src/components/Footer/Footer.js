@@ -1,18 +1,31 @@
 import React from "react"
 import styled from "styled-components"
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai"
+import stylesVariables from "../../sharedStyles"
 
 const Footer = styled.footer`
+  margin: 30px auto;
+
+  @media (min-width: ${stylesVariables.media.tablet}) {
+    margin: 60px auto;
+    margin-bottom: auto;
+  }
+
+  @media (min-width: ${stylesVariables.media.bigScreen}) {
+    margin: 150px auto;
+    margin-bottom: auto;
+  }
+
   a {
-    margin-top: 100px;
     font-size: 30px;
-    margin-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `
 
 const FooterComponent = () => {
   return (
-    <Footer style={{ marginTop: "100px" }}>
+    <Footer>
       <a
         href="https://github.com/adrimihailescu"
         target="_blank"

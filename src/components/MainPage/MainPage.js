@@ -18,7 +18,7 @@ import StylesVariables, {
   SectionPanelTitle,
   SectionContent,
 } from "../../sharedStyles"
-import Footer from "../Footer/Footer"
+import FooterComponent from "../Footer/Footer"
 
 const sectionPages = ["about", "projects", "contact"]
 
@@ -100,7 +100,7 @@ const MainPage = () => {
                     {state => (
                       <SectionContent state={state}>
                         <RenderedElement data={elementData} />
-                        <Footer />
+                        <FooterComponent />
                       </SectionContent>
                     )}
                   </Transition>

@@ -146,7 +146,7 @@ export const SectionPanel = styled.section`
     /* width: 100%; */
     transition: transform 0.5s;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 40px auto 0;
 
     @media (min-width: ${stylesVariables.media.tablet}) {
       margin: 90px auto;
