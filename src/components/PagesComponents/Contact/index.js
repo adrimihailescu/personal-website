@@ -55,13 +55,12 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
 
     if (response.status === 200 && response.ok) {
       setFormsSubmitStatus({ fail: false, success: true })
+      setFormData({})
     }
 
     if (response.status === 403 || response.status === 404 || !response.ok) {
       setFormsSubmitStatus({ fail: true, success: false })
     }
-
-    setFormData({})
   }
 
   const handleChange = e => {
