@@ -30,7 +30,7 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const hubSpotURL = `${process.env.HUBSPOT_ENDPOINT}/${process.env.HUBSPOT_PORTAL_ID}/${process.env.HUBSPOT_FORM_ID}`
+    const hubSpotURL = `${process.env.GATSBY_HUBSPOT_ENDPOINT}/${process.env.GATSBY_HUBSPOT_PORTAL_ID}/${process.env.GATSBY_HUBSPOT_FORM_ID}`
 
     const formDataFields = Object.keys(formData).map(key => ({
       name: key,
@@ -40,8 +40,8 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
     const data = {
       fields: formDataFields,
       context: {
-        pageUri: process.env.HUBSPOT_FORM_PAGE_URI,
-        pageName: process.env.HUBSPOT_PAGE_NAME,
+        pageUri: process.env.GATSBY_HUBSPOT_FORM_PAGE_URI,
+        pageName: process.env.GATSBY_HUBSPOT_PAGE_NAME,
       },
     }
 
