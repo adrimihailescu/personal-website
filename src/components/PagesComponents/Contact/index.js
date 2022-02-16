@@ -56,6 +56,10 @@ const Contact = ({ isTextVertical, animateIn, data }) => {
     if (response.status === 200 && response.ok) {
       setFormsSubmitStatus({ fail: false, success: true })
       setFormData({})
+
+      setTimeout(() => {
+        setFormsSubmitStatus({ fail: false, success: false })
+      }, 5000)
     }
 
     if (response.status === 403 || response.status === 404 || !response.ok) {
