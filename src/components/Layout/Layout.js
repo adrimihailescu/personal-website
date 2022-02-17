@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import { createGlobalStyle } from "styled-components"
 import stylesVariables from "../../sharedStyles"
 import SEO from "./SEO"
+import CookieConsent from "react-cookie-consent"
 
 const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -232,6 +233,14 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header />
       {children}
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        declineButtonText="Decline"
+        cookieName="gatsby-gdpr-google-analytics"
+      >
+        This site uses cookies ...
+      </CookieConsent>
     </>
   )
 }
