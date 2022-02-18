@@ -223,7 +223,7 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   box-sizing: border-box;
   }
-
+  
   .CookieConsent {
     background: ${stylesVariables.colors.primary86} !important;
     color: ${stylesVariables.colors.mainText} !important;
@@ -248,12 +248,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     #rcc-decline-button {
-      background: ${stylesVariables.colors.special}  !important;
+      background: #EE6E7D  !important;
       color: black !important;
       border-radius: 30px !important;
     }
   }
-
 `
 
 const Layout = ({ children }) => {
@@ -270,7 +269,7 @@ const Layout = ({ children }) => {
         enableDeclineButton
         cookieName="gatsby-gdpr-google-analytics"
       >
-        Have a cookie , it's low fat! I'm only counting how many guests I have!
+        Have a cookie, it's low fat! I'm only counting how many guests I have!
       </CookieConsent>
     </>
   )
