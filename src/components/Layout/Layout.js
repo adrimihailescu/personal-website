@@ -224,6 +224,36 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   }
 
+  .CookieConsent {
+    background: ${stylesVariables.colors.primary86} !important;
+    color: ${stylesVariables.colors.mainText} !important;
+
+    div :nth-child(1){
+      font-size: 16px;
+      margin: 10px 10px !important;
+      text-align: center;
+    }
+    
+    div :nth-child(2) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+   
+    #rcc-confirm-button{
+    background: lime !important;
+    color: ${stylesVariables.colors.primary80} !important;
+    border-radius: 30px !important;
+
+    }
+
+    #rcc-decline-button {
+      background: ${stylesVariables.colors.special}  !important;
+      color: ${stylesVariables.colors.primary0} !important;
+      border-radius: 30px !important;
+    }
+  }
+
 `
 
 const Layout = ({ children }) => {
@@ -237,9 +267,10 @@ const Layout = ({ children }) => {
         location="bottom"
         buttonText="Accept"
         declineButtonText="Decline"
+        enableDeclineButton
         cookieName="gatsby-gdpr-google-analytics"
       >
-        This site uses cookies ...
+        Have a cookie , it's low fat! I'm only counting how many guests I have!
       </CookieConsent>
     </>
   )
