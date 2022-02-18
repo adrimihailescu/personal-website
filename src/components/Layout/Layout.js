@@ -249,7 +249,7 @@ const GlobalStyle = createGlobalStyle`
 
     #rcc-decline-button {
       background: ${stylesVariables.colors.special}  !important;
-      color: ${stylesVariables.colors.primary0} !important;
+      color: black !important;
       border-radius: 30px !important;
     }
   }
